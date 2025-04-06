@@ -1,0 +1,319 @@
+@use '../core/all' as *;
+
+.swiper-wrapper > .swiper-slide:not(.swiper-slide-active) {
+	.main-slide__title {
+		transition: opacity 0.9s ease-in-out;
+		opacity: 0 !important;
+	}
+
+	.main-slide__text {
+		transition: opacity 0.9s ease-in-out;
+		opacity: 0 !important;
+	}
+}
+//* ----------------------------------------------------------------------------
+
+//* ----------------------------------------------------------------------------
+.return-button {
+	cursor: pointer;
+	position: fixed;
+	z-index: 13;
+	top: 50%;
+	right: 5px;
+	margin-top: -17px;
+	width: 35px;
+	height: 65px;
+	border-radius: 4px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background: #f2ebe4;
+
+	i {
+		&::before {
+			text-shadow: none;
+			font-weight: 400;
+		}
+	}
+
+	._button {
+		font-size: 3.8rem;
+		position: relative;
+		z-index: 13;
+		left: 0;
+		width: 35px;
+		height: 35px;
+		cursor: pointer;
+		transition: all 0.5s ease-in-out;
+		// color: $font-color-link;
+		background: transparent;
+		display: flex;
+		justify-content: center;
+		img {
+			width: 20px;
+			height: 100%;
+			// height: 35px;
+		}
+
+		&:hover {
+			animation: fadeInBackground;
+		}
+	}
+
+	&._rotate {
+		._button {
+			scale: -1;
+		}
+	}
+}
+
+//* ----------------------------------------------------------------------------
+.checkbox {
+	&._error {
+		.checkbox__lable::before {
+			box-shadow: 0px 0px 14px 3px #f16666;
+		}
+	}
+
+	// .checkbox__input
+	&__input {
+		display: none;
+
+		&:checked + .checkbox__label .icon-check {
+			scale: 1;
+		}
+	}
+
+	&__checked {
+		cursor: pointer;
+		position: relative;
+		display: flex;
+		align-items: center;
+		font-size: 16px;
+		line-height: 140%;
+	}
+
+	// .checkbox__lable
+	&__label {
+		cursor: pointer;
+		position: relative;
+		display: inline-flex;
+		align-items: flex-start;
+		font-size: 16px;
+		line-height: 110%;
+
+		._icon {
+			display: block;
+			position: absolute;
+			width: 16px;
+			height: 16px;
+			scale: 0;
+			transition: scale 0.2s ease;
+			margin: 3px 0 0 -27px;
+			color: $font-color-title;
+
+			&::before {
+				font-size: 18px;
+			}
+		}
+
+		&::before {
+			content: '';
+			position: relative;
+			margin: 3px 10px 0 0;
+			flex: 0 0 16px;
+			height: 16px;
+			width: 16px;
+			background: $background;
+			transition: box-shadow 0.3s ease-in-out;
+		}
+
+		a {
+			text-decoration: underline;
+			font-weight: 600;
+			&:hover {
+				text-decoration: none;
+			}
+		}
+	}
+}
+
+._clip-circle {
+	@include min-960 {
+		cursor: pointer;
+		position: relative;
+		z-index: 2;
+
+		&:before {
+			content: '';
+			position: absolute;
+			left: 0;
+			top: 0;
+			width: 100%;
+			height: 100%;
+			color: #fff;
+			background: linear-gradient(-45deg, #20193c, #020101 70%);
+			clip-path: circle(var(--size) at var(--pos));
+			transition: all 0.9s ease-in-out;
+			z-index: 1;
+		}
+
+		&:hover {
+			&:before {
+				--size: 200%;
+			}
+		}
+	}
+}
+
+//* ------------------------- [Class _ibg] -------------------------------------
+
+.t-h1 {
+	font-size: 48px;
+	@include minmax-490-1920 {
+		font-size: calc(
+			32px + (48 - 32) * ((100vw - 490px) / (1920 - 490))
+		) !important;
+	}
+	@include screen-490 {
+		font-size: 32px !important;
+	}
+}
+.t-h2 {
+	font-size: 32px;
+	line-height: 100%;
+	letter-spacing: 1.4px;
+	text-transform: uppercase;
+	@include minmax-490-1920 {
+		font-size: calc(
+			24px + (32 - 24) * ((100vw - 490px) / (1920 - 490))
+		) !important;
+	}
+	@include screen-490 {
+		font-size: 24px !important;
+	}
+}
+.t-h3 {
+	font-size: 24px;
+	line-height: 100%;
+	letter-spacing: 1.4px;
+	text-transform: uppercase;
+	@include minmax-490-1920 {
+		font-size: calc(
+			20px + (24 - 20) * ((100vw - 490px) / (1920 - 490))
+		) !important;
+	}
+	@include screen-490 {
+		font-size: 20px !important;
+	}
+}
+.t-text {
+	font-size: 20px;
+	line-height: 130%;
+	letter-spacing: 0px;
+	@include minmax-490-1920 {
+		font-size: calc(14px + (20 - 14) * ((100vw - 490px) / (1920 - 490)));
+	}
+	@include screen-490 {
+		font-size: 14px;
+	}
+}
+.t-text-16 {
+	font-size: 20px;
+	@include minmax-490-1920 {
+		font-size: calc(16px + (20 - 16) * ((100vw - 490px) / (1920 - 490)));
+	}
+	@include screen-490 {
+		font-size: 16px;
+	}
+}
+
+.button {
+	cursor: pointer;
+	position: relative;
+	height: 5.6rem;
+	display: inline-flex;
+	align-items: center;
+	font-family: $font-family-title;
+	// transform: skewX(-10deg);
+	text-transform: uppercase;
+	font-weight: 400;
+	overflow: hidden;
+
+	@include screen-490 {
+		height: 40px;
+	}
+	span {
+		letter-spacing: 1px;
+	}
+
+	&:hover {
+		.running-line__inner {
+			@include min-1024 {
+				opacity: 1;
+				transition-duration: 0.6s;
+			}
+		}
+
+		@include min-1024 {
+			> span {
+				// opacity: 0;
+			}
+		}
+	}
+
+	span {
+		display: block;
+		text-transform: uppercase;
+		// transform: skewX(10deg);
+		pointer-events: none;
+		opacity: 1;
+		transition: opacity 0.9s ease-in-out;
+
+		@include screen-490 {
+			letter-spacing: 1.1px;
+		}
+	}
+	.running-line {
+		padding: 0.5rem;
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		overflow: hidden;
+		pointer-events: none;
+		height: 100%;
+		display: flex;
+		align-items: center;
+
+		// .running-line__inner
+		&__inner {
+			transform: translate3d(calc(-25% + 1rem), 0, 0);
+			width: fit-content;
+			position: relative;
+			display: flex;
+			opacity: 0;
+			transition: opacity 0.9s ease-in-out;
+
+			@include min-1024 {
+				animation: lineMarquee 3s linear infinite;
+			}
+
+			span {
+				white-space: nowrap;
+			}
+		}
+
+		@keyframes lineMarquee {
+			0% {
+				transform: translate3d(calc(-25% + 1rem), 0, 0);
+			}
+
+			100% {
+				transform: translate3d(calc(-50% + 1rem), 0, 0);
+			}
+		}
+	}
+}
+
+//* ----------------------------------------------------------------------------

@@ -1,0 +1,10 @@
+@use 'sass:string'; // Импортируем модуль string
+$icon-font-family: 'icon-set' !default;
+$icon-font-path: '../fonts' !default;
+
+$icon-unlink: string.unquote('"\\f127"');
+$icon-angle-left: string.unquote('"\\f104"');
+$icon-angle-right: string.unquote('"\\f105"');
+$icon-angle-up: string.unquote('"\\f106"');
+$icon-angle-down: string.unquote('"\\f107"');
+$icon-check: string.unquote('"\\e90f"');

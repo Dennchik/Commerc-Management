@@ -1,0 +1,51 @@
+include ../includes/mixins
+doctype html
+html(lang="ru")
+	head
+		meta(charset="UTF-8")
+		meta(http-equiv="X-UA-Compatible" content="IE=edge")
+		meta(name="mobile-web-app-capable" content="yes")
+		meta(name="apple-mobile-web-app-capable" content="yes")
+		meta(name="viewport" content="width=device-width, initial-scale=1.0")
+		meta(name="description" content="Краткое описание документа")
+		meta(name="keywords" content="keywords-ключевые слова для поиска")
+		block link 
+			link(rel="icon" type="image/icon" href="@@webRoot/img/icons/logo.jpeg")
+			link(rel="stylesheet" type="text/css" href="@@webRoot/css/main.min.css")
+		block style
+		block script
+			script(defer="defer" src="@@webRoot/js/app.min.js")
+			script(defer="defer" src="@@webRoot/js/main.min.js")
+
+		block title
+		- var text
+		title #{text}
+
+	body
+		include ../modules/preloader
+		include ../includes/mixins
+		.wrapper
+			.page
+				block header 
+					//- header.page__header
+						include ../layouts/header
+				block page-content
+					main._main-content
+						.main-content#wrapper
+							._content#content
+								block main-content 
+								footer._footer
+									block footer 
+										include footer 
+					block menu-list
+						nav._menu-list
+							//- include ../chunks/menu-list
+							//- block aside-button
+								.return-button#scrollButton
+									._arrow._button
+										img(src="@@webRoot/img/frame/arrow.png" alt="image")
+									//- +iconfont('angle-down', '_button')
+									//- block content-hidden
+									//- block burger-menu
+									//- 	include ../assets/burger-menu
+									//- include ../layouts/page-grid

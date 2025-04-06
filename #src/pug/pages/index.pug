@@ -1,0 +1,32 @@
+extends ../layouts/app_layout
+append link
+	link(rel="stylesheet" type="text/css" href="@@webRoot/css/index.min.css")
+prepend script
+	script(defer="defer" src="@@webRoot/js/vendors/runtime.min.js")
+	script(defer="defer" src="@@webRoot/js/vendors/swiper-bundle.min.js") 
+block title
+	- var text='Управление коммерческой недвижимостью'
+
+block main-content 
+	section.main-content__section 
+		include ../sections/section-perform
+	section.main-content__section
+		include ../sections/section-about
+	section.main-content__section
+		include ../sections/section-services
+	section.main-content__section._bg-color
+		include ../sections/section-order
+	section.main-content__section 
+		include ../sections/section-project
+	section.main-content__section 
+		include ../sections/section-partners
+	section.main-content__section 
+		include ../sections/section-ordercall 
+	section.main-content__section
+		include ../sections/section-info
+	section.main-content__section._bg-color
+		include ../sections/section-consultation
+	section.main-content__section  
+		include ../sections/section-survey
+	section.main-content__section 
+		include ../sections/section-brands 

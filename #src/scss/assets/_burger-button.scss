@@ -1,0 +1,27 @@
+@use '../core/all' as *;
+
+.hamburger {
+	cursor: pointer;
+	// .hamburger__line
+	&__line {
+		width: 40px;
+		height: 4px;
+		// background-color: $color-secondary;
+		display: block;
+		margin: 6px auto;
+		transition: all 0.3s ease-in-out;
+	}
+
+	&.is-active {
+		.hamburger__line {
+			// background-color: $color-secondary;
+			&:nth-child(1) {
+				transform: translateY(10px);
+			}
+
+			&:nth-child(3) {
+				transform: translateY(-10px);
+			}
+		}
+	}
+}

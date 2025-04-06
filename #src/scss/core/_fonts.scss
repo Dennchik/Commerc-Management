@@ -1,0 +1,4 @@
+@use "variables.scss" as *;
+@use "mixins.scss" as *;
+@include font-face("icon-set", "icon-set", 400, "normal");
+@include font-face("PsyType", "PsyType", 400, "normal");

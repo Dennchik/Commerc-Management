@@ -1,0 +1,49 @@
+@use '../core/all' as *;
+
+.section-project {
+	// .section-project__body
+	&__body {
+		padding: 6rem 0;
+
+		@include screen-490 {
+			padding: 16px 0;
+		}
+	}
+
+	// .section-project__title
+	&__title {
+		font-family: $font-family-title;
+		color: $font-color-title;
+		line-height: 110%;
+		letter-spacing: 1.4px;
+		text-align: left;
+		text-transform: uppercase;
+		margin-bottom: 2rem;
+	}
+}
+
+.project-images {
+	// .project-images__content
+	&__content {
+		display: flex;
+		border: 1px solid $font-color-title;
+	}
+
+	// .project-images__column
+	&__column {
+		display: flex;
+		flex-direction: column;
+
+		&:not(:last-child) {
+			border-right: 1px solid $font-color-title;
+		}
+	}
+
+	// .project-images__image
+	&__image {
+		padding: 4px;
+		&:not(:last-child) {
+			border-bottom: 1px solid $font-color-title;
+		}
+	}
+}

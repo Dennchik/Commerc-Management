@@ -1,0 +1,62 @@
+@use '../core/all' as *;
+
+.section-consultation {
+	// .section-consultation__body
+	&__body {
+		padding: 6rem 0;
+		display: flex;
+		gap: 6rem;
+
+		@include screen-690 {
+			flex-direction: column;
+		}
+
+		@include screen-490 {
+			padding: 32px 0;
+		}
+	}
+
+	// .section-consultation__column
+	&__column {
+		flex: 0 1 50%;
+	}
+
+	// .section-consultation__title
+	&__title {
+		font-family: $font-family-title;
+		color: $font-color-secondr;
+		line-height: 110%;
+		letter-spacing: 1.4px;
+		text-align: left;
+		text-transform: uppercase;
+	}
+
+	// .section-consultation__text
+	&__text {
+		color: $font-color-secondr;
+		line-height: 130%;
+		margin-bottom: 6rem;
+
+		p {
+			&:not(:last-child) {
+				margin-bottom: 8px;
+			}
+		}
+	}
+
+	// .section-consultation__button
+	&__button {
+		max-width: 300px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		color: $font-color-title;
+		background: $font-color-secondr;
+
+		span {
+			line-height: 150%;
+			white-space: nowrap;
+			text-transform: uppercase;
+		}
+	}
+}

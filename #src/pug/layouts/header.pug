@@ -1,0 +1,34 @@
+.header
+	._container
+		._content
+			a(href="@@webRoot/index.html")._column.el-logo.transform-perspective
+				._logo-wrpper.transform-box
+					._logo
+						img(src="@@webRoot/img/icons/logo.png")
+					._text
+						span Благочиние города Обнинска
+			._column.el-community
+				._menu 
+					ul._menu-items(data-da="bp-1" data-da-position="0" data-da-resolution="768" )
+						li._item
+							a(href="#about" data-letters="Церковь")._link-key.anchor-link.link_underline
+								span Церковь 
+						li._item
+							a(href="#temples" data-letters="Храмы")._link-key.anchor-link.link_underline
+								span Храмы
+						li._item
+							a(href="#contacts" data-letters="Духовенство")._link-key.anchor-link.link_underline
+								span Духовенство
+						li._item
+							a(href="#news" data-letters="Новости")._link-key.anchor-link.link_underline
+								span Новости
+						li._item
+							a(href="#contacts" data-letters="Контакты")._link-key.anchor-link.link_underline
+								span Контакты
+
+				//- a.el-community__contact(href="mailto:awdes@yandex.ru?subject=🤝%20Информация%20о%20проекте.%20Давайте%20поговорим.")
+					+iconfont('contacts', '_icon')
+					.el-community__content
+						span.el-community__title Скажи привет! 
+				._burger-button
+					include ../assets/burger-button

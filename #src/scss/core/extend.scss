@@ -1,0 +1,269 @@
+@use 'variables' as *;
+@use 'mixins.scss' as *;
+
+//* ----------------------------------------------------------------------------
+.background-clip {
+	&::before {
+		content: 'Храмы';
+		display: block;
+		position: absolute;
+		background-clip: text;
+		// background: linear-gradient(-135deg, transparent 40%, $black-color);
+		background-clip: text;
+		color: transparent;
+		text-shadow: none;
+		background-size: 300% 100%;
+		background-position: 100% 0%;
+		transition: background-position 0.5s;
+		mix-blend-mode: multiply;
+	}
+}
+
+.frame-container {
+	position: absolute;
+	margin: 0 auto;
+	z-index: 0;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	border: 40px solid transparent;
+	// border-image: url('../img/frame/border.png') 85 110;
+	border-image-repeat: repeat;
+	@include screen-320 {
+		border: 20px solid transparent;
+		// border-image: url('../img/frame/border.png') 85 110;
+		border-image-repeat: repeat;
+	}
+}
+
+.frame-container-inner {
+	border: 30px solid transparent;
+	border-image-repeat: stretch;
+	border-image-slice: 45;
+	border-image-outset: 25px;
+	// border-image-source: url('../img/frame/note.png');
+	opacity: 0.2;
+}
+
+.box-shadow {
+	box-shadow: 0 1px 7px #a08973;
+	backdrop-filter: blur(10px);
+}
+//* ----------------------------------------------------------------------------
+
+//* ----------------------------------------------------------------------------
+.font-size-calc-h2 {
+	@include minmax-490-1920 {
+		font-size: calc(28px + (50 - 28) * ((100vw - 490px) / (1920 - 490)));
+	}
+}
+
+.top-box {
+	padding: 6rem 0 0;
+	min-height: 100vh;
+	@include min-960 {
+		padding: 8rem 0 0;
+	}
+}
+.hr {
+	position: relative;
+	z-index: 9;
+	width: 100%;
+	max-height: 50px;
+	display: flex;
+	justify-content: center;
+
+	img {
+		max-width: 465px;
+		height: 50px;
+		object-fit: contain;
+	}
+}
+
+.p-box {
+	padding-top: 6rem;
+	padding-bottom: 6rem;
+}
+
+.gradient-border-bottom {
+	background-image: linear-gradient(
+		to left top,
+		rgba(205, 215, 238, 0.61) 25%,
+		transparent 75%
+	);
+}
+
+.gradient-services {
+	background-image: linear-gradient(
+		to right,
+		#050202ff 20%,
+		#1c153f 50%,
+		#050202ff 80%
+	);
+}
+
+.icon-style {
+	display: flex;
+	align-items: center;
+	height: 100%;
+	padding: 0 1.5rem;
+	border: 1px var(--border-color);
+	border-style: none solid;
+}
+
+.text-shadow-black {
+	text-shadow: 0 0 9px #00000079;
+}
+
+.text-shadow-white {
+	text-shadow:
+		0 0 15px #e4e4e4,
+		0 0 1em #e4e4e4;
+	// 0 0 0.2em $neon-blue-dark;
+}
+
+.text-shadow {
+	text-shadow:
+		0 0 15px #00000070,
+		0 0 1em #00000070,
+		0 0 0.2em blue;
+}
+
+.link_split {
+	position: relative;
+	outline: 0;
+	line-height: 1;
+	transition: color 0s 0.3s;
+	display: inline-block;
+	white-space: nowrap;
+
+	&:hover {
+		text-shadow: none;
+		color: transparent;
+		transition: none;
+
+		&::before {
+			transform: translate3d(0px, -2px, 0);
+		}
+
+		&::after {
+			transform: translate3d(0px, 2px, 0);
+		}
+
+		&::before,
+		&::after {
+			transition:
+				color 0.3s,
+				transform 0.3s;
+		}
+	}
+
+	&::before,
+	&::after {
+		content: attr(data-letters);
+		opacity: 1;
+		position: absolute;
+		top: 0;
+		left: 0;
+		transition:
+			color 0.3s,
+			opacity 0.3s,
+			transform 0.5s;
+	}
+
+	&::before {
+		clip-path: polygon(0 0, 100% 0%, 100% 30%, 0 65%);
+	}
+
+	&::after {
+		clip-path: polygon(0 65%, 100% 30%, 100% 100%, 0 100%);
+	}
+}
+
+.link_underline {
+	position: relative;
+	transition: color 0.3s ease-in-out;
+
+	&::before {
+		content: '';
+		transform: scaleX(0);
+		position: absolute;
+		bottom: 0;
+		width: 100%;
+		height: 1px;
+		transition: transform 0.3s ease-in-out;
+		opacity: 0.6;
+		// background-color: $font-color-link;
+	}
+
+	&::after {
+		bottom: 0;
+		left: 0;
+	}
+
+	&:hover {
+		&::before {
+			transform: scaleX(1);
+		}
+
+		a {
+			opacity: 1;
+		}
+	}
+}
+
+.is-open {
+	display: grid;
+	width: 100%;
+	transition: grid-template-rows 0.4s ease-in-out;
+	grid-template-columns: 1fr;
+	grid-template-rows: 0fr;
+
+	&._is-open {
+		grid-template-rows: 1fr;
+	}
+}
+
+//! ----------------------------------------------------------------------------
+.transform-perspective {
+	transform-style: preserve-3d;
+	backface-visibility: hidden;
+	perspective: 100px;
+
+	.transform-box {
+		transition: all 0.8s cubic-bezier(0.77, 0, 0.175, 1);
+
+		&:hover {
+			opacity: 0.3 !important;
+			transform-origin: 50% -100%;
+			transform: rotateX(-16deg) translateZ(-22px);
+		}
+	}
+}
+//* ------------------------------- Gradient -----------------------------------
+.grad_underline {
+	/* Определяем фоновые изображения */
+	transition: background-size 400ms;
+
+	/* Размер фона для каждого слоя */
+	background-image: linear-gradient(to left, transparent, transparent),
+		linear-gradient(
+			to left,
+			var(--background-selected),
+			var(--font-color-active)
+		);
+
+	/* Позиционирование фона */
+	background-repeat: no-repeat;
+
+	/* Повторение фона */
+	background-position:
+		100% 100%,
+		/* Первое изображение */ 0 100%; /* Второе изображение */
+
+	/* Переход для изменения размера фона */
+	background-size:
+		100% 1px,
+		/* Первое изображение */ 0 1px; /* Второе изображение */
+}

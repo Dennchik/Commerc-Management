@@ -1,0 +1,72 @@
+@use '../core/all' as *;
+
+.section-partners {
+	// .section-partners__body
+
+	&__body {
+		padding: 6rem 0;
+
+		@include screen-490 {
+			padding: 16px 0;
+		}
+	}
+
+	// .section-partners__title
+	&__title {
+		font-family: $font-family-title;
+		color: $font-color-title;
+		line-height: 110%;
+		letter-spacing: 1.4px;
+		text-align: left;
+		text-transform: uppercase;
+		margin-bottom: 2rem;
+	}
+
+	// .section-partners__content
+
+	&__content {
+	}
+}
+
+.partners-list {
+	// .partners-list__column
+	&__column {
+		max-width: 872px;
+	}
+
+	// .partners-list__row
+	&__row {
+		display: flex;
+		justify-content: space-between;
+		gap: 3rem;
+		padding: 12px 0px 18px 0px;
+		border-bottom: 1px solid rgba(36, 52, 68, 0.301);
+
+		@include screen-490 {
+			flex-direction: column;
+		}
+	}
+
+	// .partners-list__title
+	&__title {
+		flex: 0 1 320px;
+		font-family: $font-family-title;
+		color: $font-color-title;
+		line-height: 100%;
+		text-transform: uppercase;
+		letter-spacing: 1.4px;
+	}
+
+	// .partners-list__text
+	&__text {
+		flex: 0 1 520px;
+		line-height: 130%;
+	}
+
+	&__title,
+	&__text {
+		@include screen-490 {
+			flex: 0;
+		}
+	}
+}

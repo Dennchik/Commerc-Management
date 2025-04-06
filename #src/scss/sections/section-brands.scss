@@ -1,0 +1,34 @@
+@use '../core/all' as *;
+
+.section-brands {
+	padding: 6rem 0;
+
+	@include screen-490 {
+		padding: 16px 0;
+	}
+
+	// .section-brands__slide-website
+	&__slide-website {
+		padding: 4rem 0.5rem;
+		overflow: hidden;
+	}
+}
+
+.section-brands {
+	// .section-brands__title
+	&__title {
+		font-family: $font-family-title;
+		color: $font-color-title;
+		line-height: 110%;
+		letter-spacing: 1.4px;
+		text-transform: uppercase;
+		margin-bottom: 2rem;
+	}
+}
+
+.brand-slide {
+	// .brand-slide__body
+	&__body {
+		overflow: hidden;
+	}
+}
