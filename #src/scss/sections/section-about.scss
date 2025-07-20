@@ -1,106 +1,106 @@
 @use 'core/all.scss' as *;
 
 .section-about {
-	// .section-about__body
-	&__body {
-		padding-top: 6rem;
-		padding-bottom: 6rem;
+  // .section-about__body
+  &__body {
+    padding-top: 6rem;
+    padding-bottom: 6rem;
 
-		@include screen-490 {
-			padding-top: 16px;
-			padding-bottom: 16px;
-		}
-	}
+    @include screen-490 {
+      padding-top: 16px;
+      padding-bottom: 16px;
+    }
+  }
 
-	// .section-about__title
-	&__title {
-		margin-bottom: 12px;
-		font-family: $font-family-title;
-		color: $font-color-title;
-		line-height: 110%;
-		letter-spacing: 1.4px;
-		text-transform: uppercase;
-	}
+  // .section-about__title
+  &__title {
+    margin-bottom: 12px;
+    font-family: $font-family-title;
+    color: $font-color-title;
+    line-height: 110%;
+    letter-spacing: 1.4px;
+    text-transform: uppercase;
+  }
 
-	// .section-about__content
-	&__content {
-		display: grid;
-		grid-template-columns: minmax(320px, 898px) minmax(320px, 420px);
-		gap: 6rem;
+  // .section-about__content
+  &__content {
+    display: grid;
+    grid-template-columns: 1fr minmax(320px, 420px);
+    gap: 6rem;
 
-		@include screen-768 {
-			display: flex;
-			flex-direction: column;
-		}
+    @include screen-768 {
+      display: flex;
+      flex-direction: column;
+    }
 
-		@include screen-490 {
-			gap: 32px;
-		}
-	}
+    @include screen-490 {
+      gap: 32px;
+    }
+  }
 
-	// .section-about__column
-	&__column {
-		width: 100%;
+  // .section-about__column
+  &__column {
+    width: 100%;
 
-		&:nth-child(1) {
-			flex: 0 1 56%;
-		}
+    &:nth-child(1) {
+      flex: 0 1 56%;
+    }
 
-		&:nth-child(2) {
-			flex: 0 1 44%;
-		}
-	}
+    &:nth-child(2) {
+      flex: 0 1 44%;
+    }
+  }
 
-	// .section-about__image
-	&__image {
-		position: relative;
-		width: 100%;
-		height: 100%;
+  // .section-about__image
+  &__image {
+    position: relative;
+    width: 100%;
+    height: 100%;
 
-		img {
-			position: relative;
-			object-position: center;
-			width: 100%;
-			height: 100%;
-		}
-	}
+    img {
+      position: relative;
+      object-position: center;
+      width: 100%;
+      height: 100%;
+    }
+  }
 
-	// .section-about__label
-	&__label {
-		padding: 20px 60px;
-		position: absolute;
-		display: flex;
-		justify-content: space-between;
-		left: 0;
-		bottom: 0;
-		width: 100%;
-		height: auto;
-		background: $font-color-title;
+  // .section-about__label
+  &__label {
+    padding: 20px 60px;
+    position: absolute;
+    display: flex;
+    justify-content: space-between;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: auto;
+    background: $font-color-title;
 
-		@include screen-490 {
-			padding: 12px 40px;
-		}
-	}
+    @include screen-490 {
+      padding: 12px 40px;
+    }
+  }
 
-	// .section-about__item
-	&__item {
-		font-family: $font-family-title;
-		color: $font-color-secondr;
+  // .section-about__item
+  &__item {
+    font-family: $font-family-title;
+    color: $font-color-secondary;
 
-		&:nth-child(2) {
-			display: flex;
-			flex-direction: column;
-		}
-	}
+    &:nth-child(2) {
+      display: flex;
+      flex-direction: column;
+    }
+  }
 }
 
 .about-content {
-	// .about-content__text
-	&__text {
-		p {
-			&:not(:last-child) {
-				margin-bottom: 12px;
-			}
-		}
-	}
+  // .about-content__text
+  &__text {
+    p {
+      &:not(:last-child) {
+        margin-bottom: 12px;
+      }
+    }
+  }
 }

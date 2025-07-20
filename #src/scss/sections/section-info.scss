@@ -1,84 +1,92 @@
-@use '../core/all' as *;
+@use "../core/all" as *;
 
 .section-info {
-	// .section-info__body
-	&__body {
-		padding: 6rem 0;
+  // .section-info__body
+  &__body {
+    padding: 6rem 0;
 
-		@include screen-490 {
-			padding: 16px 0;
-		}
-	}
+    @include screen-490 {
+      padding: 16px 0;
+    }
+  }
 
-	// .section-info__title
-	&__title {
-		font-family: $font-family-title;
-		color: $font-color-title;
-		line-height: 110%;
-		letter-spacing: 1.4px;
-		text-align: left;
-		text-transform: uppercase;
-		margin-bottom: 2rem;
-	}
+  // .section-info__title
+  &__title {
+    font-family: $font-family-title;
+    color: $font-color-title;
+    line-height: 110%;
+    letter-spacing: 1.4px;
+    text-align: left;
+    text-transform: uppercase;
+    margin-bottom: 3rem;
 
-	// .section-info__content
-	&__content {
-		display: flex;
-		gap: 6rem;
-	}
+    @include screen-490 {
+      margin-bottom: 12px;
+    }
+  }
 
-	// .section-info__column
-	&__column {
-		flex: 0 1 50%;
-		@include screen-690 {
-			flex: 0 1 auto;
-		}
-		&:nth-child(2) {
-			@include screen-690 {
-				display: none;
-			}
-		}
-	}
+  // .section-info__content
+  &__content {
+    display: flex;
+    gap: 6rem;
+  }
 
-	// .section-info__image
-	&__image {
-		width: 100%;
-		height: 100%;
+  // .section-info__column
+  &__column {
+    flex: 0 1 50%;
+    @include screen-690 {
+      flex: 0 1 auto;
+    }
+    &:nth-child(2) {
+      @include screen-690 {
+        display: none;
+      }
+    }
+  }
 
-		img {
-			object-fit: cover;
-			height: 100%;
-		}
+  // .section-info__image
+  &__image {
+    width: 100%;
+    height: 100%;
 
-		@include screen-690 {
-			display: none;
-		}
-	}
+    img {
+      object-fit: cover;
+      height: 100%;
+    }
+
+    @include screen-690 {
+      display: none;
+    }
+  }
 }
 
 .info-content {
-	// .info-content__item
-	&__item {
-		&:not(:last-child) {
-			margin-bottom: 2rem;
-		}
-	}
+  // .info-content__item
+  &__item {
+    &:not(:last-child) {
+      margin-bottom: 3rem;
 
-	// .info-content__title
-	&__title {
-		font-family: $font-family-title;
-		color: $font-color-title;
-		line-height: 100%;
-		text-transform: uppercase;
-		letter-spacing: 1.4px;
+      @include screen-490 {
+        margin-bottom: 12px;
+      }
+    }
+  }
 
-		&:not(:last-child) {
-			margin-bottom: 4px;
-		}
-	}
+  // .info-content__title
+  &__title {
+    font-family: $font-family-title;
+    color: $font-color-title;
+    line-height: 100%;
+    text-transform: uppercase;
+    letter-spacing: 1.4px;
 
-	// .info-content__text
-	&__text {
-		line-height: 130%;
-	}
+    &:not(:last-child) {
+      margin-bottom: 0.52rem;
+    }
+  }
+
+  // .info-content__text
+  &__text {
+    line-height: 130%;
+  }
 }

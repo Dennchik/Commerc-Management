@@ -8,9 +8,9 @@ form(action="" method="get" id="form-order").order-form
 			._item 
 				label(for="phone")._label 
 				._input
-					input.input.phone(id="phone" autocomplete="on" type="text" value="" name="phone" error="Обязательное поле" placeholder="+7 (___) ___-__-__")
+					input.input.phone(id="phone" autocomplete="off" type="tel" name="phone" error="Обязательное поле" placeholder="+7 (___) ___-__-__")
 		._line
 			._item 
 				label(for="comment")._label 
-				._input
+				._text
 					textarea._comment(id="comment" autocomplete="on" type="text" value="" name="comment" placeholder="Сообщение...")

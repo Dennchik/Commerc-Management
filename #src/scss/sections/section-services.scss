@@ -1,117 +1,117 @@
 @use 'core/all.scss' as *;
 
 .section-services {
-	// .section-services__body
-	&__body {
-		padding-top: 6rem;
-		padding-bottom: 6rem;
+  // .section-services__body
+  &__body {
+    padding-top: 6rem;
+    padding-bottom: 6rem;
 
-		@include screen-490 {
-			padding-top: 16px;
-			padding-bottom: 16px;
-		}
-	}
+    @include screen-490 {
+      padding-top: 16px;
+      padding-bottom: 16px;
+    }
+  }
 
-	// .section-services__title
-	&__title {
-		font-family: $font-family-title;
-		color: $font-color-title;
-		line-height: 110%;
-		letter-spacing: 1.4px;
-		text-align: left;
-		text-transform: uppercase;
-		margin-bottom: 2rem;
-	}
+  // .section-services__title
+  &__title {
+    font-family: $font-family-title;
+    color: $font-color-title;
+    line-height: 110%;
+    letter-spacing: 1.4px;
+    text-align: left;
+    text-transform: uppercase;
+    margin-bottom: 2rem;
+  }
 
-	// .section-services__content
-	&__content {
-		display: grid;
-		grid-template-columns: minmax(220px, 420px) minmax(320px, 898px);
-		gap: 60px;
+  // .section-services__content
+  &__content {
+    display: grid;
+    grid-template-columns: minmax(220px, 420px) 1fr;
+    gap: 60px;
 
-		@include minmax-768-1920 {
-			gap: calc(16px + (60 - 16) * ((100vw - 768px) / (1920 - 768)));
-		}
+    @include minmax-768-1920 {
+      gap: calc(16px + (60 - 16) * ((100vw - 768px) / (1920 - 768)));
+    }
 
-		@include screen-768 {
-			grid-template-columns: 1fr;
-		}
-	}
+    @include screen-768 {
+      grid-template-columns: 1fr;
+    }
+  }
 
-	// .section-services__column
-	&__column {
-		display: flex;
-		flex-direction: column;
-		height: auto;
+  // .section-services__column
+  &__column {
+    display: flex;
+    flex-direction: column;
+    height: auto;
 
-		&:nth-child(1) {
-			@include screen-768 {
-				display: none;
-			}
-		}
-	}
+    &:nth-child(1) {
+      @include screen-768 {
+        display: none;
+      }
+    }
+  }
 
-	// .section-services__image
-	&__image {
-		position: relative;
-		overflow: hidden;
-		height: 100%;
-		top: 0;
-		right: 0;
-		width: 100%;
-		height: 100%;
+  // .section-services__image
+  &__image {
+    position: relative;
+    overflow: hidden;
+    height: 100%;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
 
-		@include screen-768 {
-			height: 250px;
-		}
+    @include screen-768 {
+      height: 250px;
+    }
 
-		img {
-			position: absolute;
-			top: 0;
-			left: 0;
-			width: 100%;
-			height: 100%;
-			object-fit: cover;
-			object-position: center;
-		}
-	}
+    img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+    }
+  }
 
-	// .section-services__label
-	&__label {
-		padding: 20px 50px;
-		position: absolute;
-		transform: translateY(-1px);
-		left: 0;
-		top: 0;
-		font-family: $font-family-title;
-		color: $font-color-secondr;
-		background: $font-color-title;
-		display: flex;
-		justify-content: center;
+  // .section-services__label
+  &__label {
+    padding: 20px 50px;
+    position: absolute;
+    transform: translateY(-1px);
+    left: 0;
+    top: 0;
+    font-family: $font-family-title;
+    color: $font-color-secondary;
+    background: $font-color-title;
+    display: flex;
+    justify-content: center;
 
-		@include screen-960 {
-			padding: 12px 40px;
-		}
-	}
+    @include screen-960 {
+      padding: 12px 40px;
+    }
+  }
 }
 
 .services-content {
-	// .services-content__item
-	&__item {
-		&:not(:last-child) {
-			margin-bottom: 2rem;
-		}
-	}
+  // .services-content__item
+  &__item {
+    &:not(:last-child) {
+      margin-bottom: 2rem;
+    }
+  }
 
-	// .services-content__title
-	&__title {
-		font-family: $font-family-title;
-		color: $font-color-title;
-	}
+  // .services-content__title
+  &__title {
+    font-family: $font-family-title;
+    color: $font-color-title;
+  }
 
-	// .services-content__text
-	&__text {
-		line-height: 130%;
-		letter-spacing: 0px;
-	}
+  // .services-content__text
+  &__text {
+    line-height: 130%;
+    letter-spacing: 0px;
+  }
 }

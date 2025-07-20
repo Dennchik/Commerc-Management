@@ -2,7 +2,6 @@
   "name": "commercmanagement",
   "version": "1.0.0",
   "description": "Commerc-Management",
-  "main": "index.js",
   "type": "module",
   "scripts": {
     "START": "gulp",

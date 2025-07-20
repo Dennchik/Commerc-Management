@@ -1,30 +1,36 @@
 .header
 	._container
 		._content
-			a(href="@@webRoot/index.html")._column.el-logo.transform-perspective
-				._logo-wrpper.transform-box
-					._logo
-						img(src="@@webRoot/img/icons/logo.png")
-					._text
-						span Благочиние города Обнинска
-			._column.el-community
-				._menu 
-					ul._menu-items(data-da="bp-1" data-da-position="0" data-da-resolution="768" )
+			._column.el-logo
+				._logo-wrpper 
+					a(href="#home")._logo.anchor-link
+						img(src="@@webRoot/img/logo.jpg")
+					._text(data-da="bp-6" data-da-position="0" data-da-resolution="768") 
+						span Управление коммерческой недвижимостью
+			._column 
+				._menu(data-da="bp-7" data-da-position="0" data-da-resolution="768") 
+					ul._menu-items
 						li._item
-							a(href="#about" data-letters="Церковь")._link-key.anchor-link.link_underline
-								span Церковь 
+							a(href="#about")._link-key.anchor-link.link_underline
+								span Компания 
 						li._item
-							a(href="#temples" data-letters="Храмы")._link-key.anchor-link.link_underline
-								span Храмы
+							a(href="#services")._link-key.anchor-link.link_underline
+								span Услуги
 						li._item
-							a(href="#contacts" data-letters="Духовенство")._link-key.anchor-link.link_underline
-								span Духовенство
+							a(href="#project")._link-key.anchor-link.link_underline
+								span Проекты 
 						li._item
-							a(href="#news" data-letters="Новости")._link-key.anchor-link.link_underline
-								span Новости
-						li._item
-							a(href="#contacts" data-letters="Контакты")._link-key.anchor-link.link_underline
+							a(href="#contacts")._link-key.anchor-link.link_underline
 								span Контакты
+			._column 
+				._phone
+					._phone-item
+						a(href="tel:8 (800) 234-55-44") 
+							span 8 (800) 234-55-44
+					._phone-item
+						a(href="tel:8 (980) 510-41-96") 
+							span 8 (980) 510-41-96
+
 
 				//- a.el-community__contact(href="mailto:awdes@yandex.ru?subject=🤝%20Информация%20о%20проекте.%20Давайте%20поговорим.")
 					+iconfont('contacts', '_icon')

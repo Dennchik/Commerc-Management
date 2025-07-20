@@ -3,8 +3,8 @@
 // todo --------------------------- Modules ------------------------------------
 @use 'modules/preloader';
 // todo --------------------------- Assets -------------------------------------
-// @use 'assets/burger-button';
-// @use 'assets/burger-menu';
+@use 'assets/burger-button';
+@use 'assets/sidebar-menu';
 // @use 'assets/parallax';
 // todo --------------------------- Chunks -------------------------------------
 // @use 'chunks/menu-list';
@@ -16,7 +16,7 @@
 @use 'assets/swiper-11.2.5';
 // todo --------------------------- layout -------------------------------------
 @use 'layouts/bem-block';
-// @use 'layouts/header';
+@use 'layouts/header';
 @use 'layouts/footer';
 // todo ---------------------------- Pages -------------------------------------
 @use 'pages/page';
@@ -28,69 +28,69 @@
 // #region
 // todo ---------------------------- Style -------------------------------------
 .wrapper {
-	margin: 0 auto;
-	display: flex;
-	flex-direction: column;
-	min-height: 100vh;
-	height: 100%;
-	max-width: $maxWidth;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  height: 100%;
 }
 
 [class*='_container'] {
-	max-width: $maxWidthContainer;
-	box-sizing: content-box;
-	margin: 0 auto;
-	padding: 0 16px;
+  max-width: $maxWidthContainer;
+  box-sizing: border-box;
+  margin: 0 auto;
+  padding: 0 2.6rem;
 
-	@include screen-375 {
-		padding: 0 13px;
-	}
+  @include screen-490 {
+    padding: 0 16px;
+  }
 }
 
 [class*=' _img'] {
-	display: inline-block;
-	width: auto;
-	height: auto;
-	img {
-		width: auto;
-		height: auto;
-		vertical-align: middle;
-		object-fit: cover;
-	}
+  display: inline-block;
+  width: auto;
+  height: auto;
+
+  img {
+    width: 100%;
+    height: 100%;
+    vertical-align: middle;
+    object-fit: cover;
+  }
 }
 
 [class*='_ibg'] {
-	position: absolute;
+  position: absolute;
 
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 100%;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
 
-	img {
-		position: absolute;
-		top: 0;
-		left: 0;
-		width: 100%;
-		height: 100%;
-		object-fit: cover;
-		object-position: center;
-	}
+  img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
 
-	svg {
-		position: absolute;
-		top: 0;
-		right: 0;
-		bottom: 0;
-		width: 100%;
-		height: 100%;
-		object-fit: cover;
-	}
+  svg {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
 }
 
 [class*='icon-'] {
-	cursor: pointer;
-	display: inline-flex;
-	align-items: center;
-	justify-content: center;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
 }
