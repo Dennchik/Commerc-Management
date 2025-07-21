@@ -26,7 +26,6 @@
 
     @include screen-490 {
       padding-top: 32px;
-      padding-bottom: 32px;
     }
   }
 
@@ -46,6 +45,10 @@
     @include screen-768 {
       min-height: 100%;
       padding: 204px 0 40px;
+    }
+
+    @include screen-490 {
+      max-width: 100%;
     }
   }
 
@@ -69,6 +72,7 @@
 
     @include screen-490 {
       margin-bottom: 24px;
+      max-width: 100%;
     }
   }
 
@@ -80,6 +84,10 @@
     justify-content: center;
     color: $font-color-title;
     background: $font-color-secondary;
+
+    @include screen-490 {
+      max-width: 100%;
+    }
 
     span {
       line-height: 150%;

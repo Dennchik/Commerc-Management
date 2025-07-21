@@ -34,13 +34,13 @@
     color: #fff;
   }
 
-  // .burger-menu__body
+  // .sidebar-menu__body
   &__body {
     height: 100%;
     background-color: $color;
   }
 
-  // .burger-menu__content
+  // .sidebar-menu__content
   &__content {
     height: 100%;
     max-width: 400px;
@@ -51,7 +51,7 @@
     border-bottom: none;
   }
 
-  // .burger-menu__menu
+  // .sidebar-menu__menu
   &__menu {
     display: flex;
     flex-direction: column;
@@ -85,7 +85,7 @@
     gap: 1.6rem;
   }
 
-  // .burger-menu__menu-content
+  // .sidebar-menu__menu-content
   &__menu-content {
     overflow-x: hidden;
     height: 100%;
@@ -97,32 +97,56 @@
     font-size: 2.4rem;
   }
 
-  // .burger-menu__menu-footer
+  // .sidebar-menu__menu-footer
   &__menu-footer {
     width: 100%;
     padding: 10px;
     border-top: 1px solid $border-color;
   }
+  .network__network-links {
+    justify-content: space-evenly;
+  }
+}
 
-  // .burger-menu__download
+.network {
+  // .network__network-links
   &__network-links {
     display: flex;
     align-items: center;
-    justify-content: space-evenly;
   }
 
-  // .burger-menu__link
+  // .network__icon-link
   &__icon-link {
     &:not(:last-child) {
-      margin-right: 1rem;
+      margin-right: 2rem;
     }
+  }
+  ._icon {
+    &::before {
+      font-size: 3.8rem;
+      font-weight: 700;
+    }
+  }
 
-    ._icon {
-      &::before {
-        font-size: 3.8rem;
-        font-weight: 700;
-        color: #5e5bb1;
-      }
+  .icon-telegram-fly {
+    &::before {
+      font-size: 3.8rem;
+      font-weight: 700;
+      color: #048cca;
+    }
+  }
+
+  .icon-vk-brand {
+    &::before {
+      color: #048cca;
+    }
+  }
+
+  .icon-whatsapp {
+    &::before {
+      font-size: 3.8rem;
+      font-weight: 700;
+      color: green;
     }
   }
 }

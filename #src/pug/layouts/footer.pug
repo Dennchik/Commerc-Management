@@ -1,26 +1,76 @@
 .footer._container#contacts
 	._body 
-		h2._title.t-h1 Контакты 
+		._header
+			h2._title.t-h1 Контакты 
+			._network
+				//- ._title.t-h2 Соцсети
+				.network
+					._network-links 
+						a(href="https://t.me/" target="_blank")._icon-link
+							+iconfont('telegram-fly', '_icon')
+						a(href="https://wa.me/" target="_blank")._icon-link
+							+iconfont('whatsapp', '_icon')
+						a(href="https://wa.me/" target="_blank")._icon-link
+							+iconfont('vk-brand', '_icon')
 		._content 
 			._column
 				.contacts._contacts
-					._item._address  
-						._title.t-h2 Адрес
-						._text.t-text Адрес: г. Обнинск, пр. Ленина 122
-					._item._phone
-						._title.t-h2 Телефон
-						._text.t-text (916) 345 57 98
-					._item._male
-						._title.t-h2 Email 
-						._text.t-text pochta@gmail.com
-					._item._network
-						._title.t-h2 Соцсети
-						._text.t-text 
-							span Git-Hub
-							span Telegram
-							span WhatsApp
+					._column 
+						._line
+							._item._name 
+								._title.t-h2 Полное наименование
+								._text.t-text Общество с ограниченной ответственностью «Центр развития инвестиций»s
+							._item
+								._title.t-h2 Сокращенное наименование
+								._text.t-text ООО «ЦРИ»
+							._item
+								._title.t-h2 Юридический адрес
+								._text.t-text 249033, Россия, Калужская область, г. Обнинск, ул. Парковая, д.5, кв. 7
+							._item
+								._title.t-h2 Ген. директор
+								._text.t-text Никашкин Павел Владимирович. Действует на основании Устава 
+						._line
+							._item
+								._title.t-h2 Почтовый адрес
+								._text.t-text 249034, Россия, Калужская обл., г. Обнинск, пр-кт Ленина 121, оф. 311, п/я № 3 
+							._item
+								._title.t-h2 Телефон/факс
+								._text.t-text 
+									span 8 (800) 234-55-44
+									span 8 (980) 510-41-96
+							._item
+								._title.t-h2 Email 
+								._text.t-text 
+									a(href="") info@crnii.ru
+					._column  
+						._line
+							._item
+								._title.t-h2 ИНН/КПП 
+								._text.t-text 4025455198 / 402501001
+							._item
+								._title.t-h2 ОГРН
+								._text.t-text 1194027012740
+							._item
+								._title.t-h2 Расчётный счет
+								._text.t-text 40702810422240091773
+							._item
+								._title.t-h2 Корр. счет
+								._text.t-text 30101810100000000612
+						._line
+							._item
+								._title.t-h2 БИК банка
+								._text.t-text 042908612
+							._item
+								._title.t-h2 Банк
+								._text.t-text Калужское  отделение №8608 ПАО СБЕРБАНК
+							._item
+								._title.t-h2 ОКВЭД
+								._text.t-text 68.32
 			._column
 				._image-01._img
-					img(src="@@webRoot/img/map-01.png" alt="image")
-				._image-02._img
-					img(src="@@webRoot/img/map-02.png" alt="image")
+					img(src="@@webRoot/img/map-01.png" alt="image") 
+	._footer 
+		._icon
+			img(src="@@webRoot/img/icons/sd.png" alt="иконка")
+		span Сайт разработан 
+		a(href="https://sadovskiy.art/") Sadovskiy Design

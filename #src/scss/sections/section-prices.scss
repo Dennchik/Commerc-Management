@@ -1,0 +1,165 @@
+@use 'core/all.scss' as *;
+
+.section-prices {
+  // .section-prices__hgroup
+  &__hgroup {
+    line-height: 130%;
+    letter-spacing: 0;
+    margin-bottom: 3.6rem;
+    @include min-960 {
+      max-width: 80%;
+    }
+  }
+
+  // .section-prices__body
+  &__body {
+    padding-top: 6rem;
+    padding-bottom: 6rem;
+
+    @include screen-490 {
+      padding-top: 16px;
+      padding-bottom: 16px;
+    }
+  }
+
+  // .section-prices__title
+  &__title {
+    margin-bottom: 12px;
+    font-family: $font-family-title;
+    color: $font-color-title;
+    line-height: 110%;
+    letter-spacing: 1.4px;
+    text-transform: uppercase;
+  }
+
+  // .section-prices__content
+  &__content {
+    display: flex;
+    gap: 3rem;
+
+    @include screen-960 {
+      gap: 2rem;
+    }
+
+    @include screen-768 {
+      flex-direction: column;
+    }
+  }
+
+  // .section-prices__column
+  &__column {
+    flex: 0 1 33.333%;
+    background: $color;
+    padding: 3rem 3rem 4rem 3rem;
+    color: #fff;
+
+    @include screen-768 {
+      margin: 0 -16px;
+    }
+  }
+
+  // .section-prices__item
+  &__item {
+    padding: 2rem 0;
+  }
+
+  // .section-prices__list
+  &__list {
+    line-height: 150%;
+    li:not(:last-child) {
+      margin-bottom: 0.5rem;
+    }
+  }
+
+  // .section-prices__item-title
+  &__item-title {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    opacity: 0.8;
+    margin-bottom: 2rem;
+
+    span {
+      margin-right: 2rem;
+    }
+    ._icon {
+      font-size: 5rem;
+    }
+  }
+
+  // .section-prices__lable
+  &__lable {
+    font-family: $font-family-title;
+    padding-top: 2rem;
+    font-size: 2.4rem;
+    opacity: 0.7;
+    border-top: 1px solid #fff;
+    line-height: 1;
+  }
+
+  // .section-prices__dividing
+  &__dividing {
+    padding: 3rem 0;
+  }
+
+  // .section-prices__line
+
+  &__line {
+    height: 1px;
+    width: 100%;
+    background: #fff;
+  }
+
+  // .section-prices__footer
+
+  &__footer {
+    margin-bottom: 2rem;
+  }
+
+  // .section-prices__text
+
+  &__text {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 2rem;
+  }
+
+  // .section-prices__col-text
+  &__col-text {
+    font-family: $font-family-title;
+    text-transform: none;
+
+    &:nth-child(2) {
+      text-decoration: line-through;
+      opacity: 0.6;
+      font-size: 90% !important;
+    }
+  }
+
+  // .section-prices__button
+  &__button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #243444;
+
+    .button {
+      display: inline;
+      background: #fafaff;
+      max-width: 300px;
+      width: 100%;
+      text-align: center;
+    }
+
+    @include screen-768 {
+      max-width: 100%;
+    }
+
+    span {
+      line-height: 150%;
+      white-space: nowrap;
+      text-transform: uppercase;
+    }
+  }
+}

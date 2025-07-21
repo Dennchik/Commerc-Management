@@ -1,4 +1,4 @@
-@use "../core/all" as *;
+@use '../core/all' as *;
 
 .swiper-wrapper > .swiper-slide:not(.swiper-slide-active) {
   .main-slide__title {
@@ -123,7 +123,7 @@
     }
 
     &::before {
-      content: "";
+      content: '';
       position: relative;
       flex: 0 0 16px;
       height: 16px;
@@ -149,7 +149,7 @@
     z-index: 2;
 
     &:before {
-      content: "";
+      content: '';
       position: absolute;
       left: 0;
       top: 0;
@@ -198,19 +198,20 @@
   }
 }
 .t-h3 {
-  font-size: 26px;
+  font-size: 32px;
   line-height: 100%;
   letter-spacing: 1.4px;
   text-transform: uppercase;
   @include minmax-490-1920 {
     font-size: calc(
-      20px + (26 - 20) * ((100vw - 490px) / (1920 - 490))
+      20px + (32 - 20) * ((100vw - 490px) / (1920 - 490))
     ) !important;
   }
   @include screen-490 {
     font-size: 20px !important;
   }
 }
+
 .t-text {
   font-size: 26px;
   line-height: 130%;
@@ -222,10 +223,22 @@
     font-size: 14px;
   }
 }
-.t-text-16 {
+.t-text-30 {
+  font-size: 28px;
+  line-height: 130%;
+  letter-spacing: 0px;
+  @include minmax-490-1920 {
+    font-size: calc(16px + (28 - 16) * ((100vw - 490px) / (1920 - 490)));
+  }
+  @include screen-490 {
+    font-size: 16px;
+  }
+}
+
+.t-text-26 {
   font-size: 30px;
   @include minmax-490-1920 {
-    font-size: calc(16px + (30 - 16) * ((100vw - 490px) / (1920 - 490)));
+    font-size: calc(16px + (26 - 16) * ((100vw - 490px) / (1920 - 490)));
   }
   @include screen-490 {
     font-size: 16px;

@@ -1,110 +1,184 @@
 @use '../core/all' as *;
 
 .footer {
-	// .footer__body
-	&__body {
-		padding: 6rem 0;
-	}
+  background: #243444;
+  margin: 6rem 0;
 
-	// .footer__title
-	&__title {
-		font-family: $font-family-title;
-		color: $font-color-title;
-		line-height: 110%;
-		letter-spacing: 1.4px;
-		text-transform: uppercase;
-		margin-bottom: 2rem;
+  &__footer {
+    line-height: 150%;
+    padding: 3rem 0;
+    font-size: 1.4rem;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    span {
+      padding-right: 1.4rem;
+      opacity: 0.7;
+    }
 
-		h2 {
-			pointer-events: none;
-		}
-	}
+    a {
+      text-decoration: underline;
+      transition: all 0.9s ease-in-out;
+      &:hover {
+        a {
+          text-decoration: none;
+        }
+      }
+    }
+    .footer__icon {
+      width: 30px;
+      height: 30px;
+      margin-right: 0.6rem;
+      display: block;
+    }
+  }
 
-	// .footer__content
-	&__content {
-		display: flex;
-		justify-content: space-between;
-		gap: 6rem;
+  // .footer__body
+  &__body {
+    padding: 6rem 0;
+    color: #fff;
+  }
 
-		@include screen-690 {
-			flex-direction: column;
-			gap: 16px;
-		}
-	}
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid #ffffff27;
+  }
 
-	// .footer__column
-	&__column {
-		&:nth-child(1) {
-			flex: 0 1 auto;
-		}
+  // .footer__title
+  &__title {
+    font-family: $font-family-title;
+    line-height: 110%;
+    letter-spacing: 1.4px;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
 
-		&:nth-child(2) {
-			flex: 0 1 max-content;
-		}
-	}
+    h2 {
+      pointer-events: none;
+    }
+  }
 
-	// .footer__image-01
-	&__image-01 {
-		height: 100%;
-		@include screen-490 {
-			display: none;
-			min-height: 350px;
-		}
+  // .footer__content
+  &__content {
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 6rem;
 
-		img {
-			position: relative;
-			height: 100%;
+    @include screen-690 {
+      flex-direction: column;
+      gap: 16px;
+    }
+  }
 
-			@include screen-490 {
-				min-height: 350px;
-			}
-		}
-	}
+  // .footer__column
+  &__column {
+    &:nth-child(1) {
+      flex: 0 1 auto;
+      margin-bottom: 2rem;
+    }
 
-	// .footer__image-01
-	&__image-02 {
-		display: none;
-		height: 100%;
+    &:nth-child(2) {
+      flex: 0 1 max-content;
+      display: flex;
+      justify-content: center;
+    }
+  }
 
-		@include screen-490 {
-			display: block;
-			min-height: 350px;
-		}
+  &__contacts {
+    display: flex;
+    gap: 6rem;
 
-		img {
-			position: relative;
-			height: 100%;
+    @include screen-1440 {
+      gap: 3rem;
+    }
 
-			@include screen-490 {
-				min-height: 350px;
-			}
-		}
-	}
+    @include screen-1140 {
+      gap: 6rem;
+    }
+
+    @include screen-490 {
+      flex-direction: column;
+      gap: 3rem;
+    }
+  }
+
+  // .footer__image-01
+  &__image-01 {
+    height: 100%;
+
+    img {
+      position: relative;
+      height: 100%;
+    }
+  }
 }
 
 .contacts {
-	// .contacts__text
-	&__item {
-		&:not(:last-child) {
-			margin-bottom: 2rem;
-		}
-	}
+  // .contacts__text
+  &__item {
+    &:not(:last-child) {
+      margin-bottom: 2rem;
+    }
+  }
 
-	// .contacts__title
-	&__title {
-		font-family: $font-family-title;
-		color: $font-color-title;
-		line-height: 100%;
-		letter-spacing: 1.4px;
-		text-transform: uppercase;
+  &__column {
+    flex: 1 1 50%;
+    display: flex;
+    gap: 6rem;
 
-		@include screen-320 {
-			margin-bottom: 12px;
-		}
-	}
+    @include screen-1440 {
+      gap: 3rem;
+    }
 
-	// .contacts__text
-	&__text {
-		line-height: 130%;
-	}
+    @include screen-1140 {
+      flex-direction: column;
+
+      &:nth-child(1) {
+        flex: 0 1 60%;
+      }
+
+      &:nth-child(2) {
+        flex: 0 1 40%;
+      }
+    }
+  }
+
+  // .contacts__line
+  &__line {
+    flex: 0 1 50%;
+    @include screen-960 {
+      &:nth-child(2) {
+        grid-column: 1/2;
+      }
+      &:nth-child(3) {
+        grid-column: 2/3;
+        grid-row: 1/2;
+      }
+      &:nth-child(4) {
+        grid-column: 2/3;
+        grid-row: 2/3;
+      }
+    }
+  }
+
+  // .contacts__title
+  &__title {
+    font-family: $font-family-title;
+    opacity: 0.7;
+    line-height: 100%;
+    letter-spacing: 1.4px;
+    text-transform: uppercase;
+    margin-bottom: 0.2rem;
+
+    @include screen-320 {
+      margin-bottom: 12px;
+    }
+  }
+
+  // .contacts__text
+  &__text {
+    line-height: 130%;
+  }
 }

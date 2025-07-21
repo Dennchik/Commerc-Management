@@ -1,57 +1,122 @@
 @use 'all' as *;
 
 @font-face {
-	font-family: '#{$icon-font-family}';
-	src:
-		url('#{$icon-font-path}/#{$icon-font-family}.ttf?9njddx') format('truetype'),
-		url('#{$icon-font-path}/#{$icon-font-family}.woff?9njddx') format('woff'),
-		url('#{$icon-font-path}/#{$icon-font-family}.svg?9njddx##{$icon-font-family}')
-			format('svg');
-	font-weight: normal;
-	font-style: normal;
-	font-display: block;
+  font-family: '#{$icon-font-family}';
+  src:
+    url('#{$icon-font-path}/#{$icon-font-family}.ttf?9njddx') format('truetype'),
+    url('#{$icon-font-path}/#{$icon-font-family}.woff?9njddx') format('woff'),
+    url('#{$icon-font-path}/#{$icon-font-family}.svg?9njddx##{$icon-font-family}')
+      format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
 }
 
 [class^='icon-']::before,
 [class*=' icon-']::before {
-	font-family: '#{$icon-font-family}' !important;
-	font-style: normal;
-	font-weight: normal;
-	font-variant: normal;
-	text-transform: none;
-	line-height: 1;
-	letter-spacing: 0;
-	font-feature-settings: 'liga';
-	font-variant-ligatures: discretionary-ligatures;
+  font-family: '#{$icon-font-family}' !important;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  letter-spacing: 0;
+  font-feature-settings: 'liga';
+  font-variant-ligatures: discretionary-ligatures;
 }
 
-.icon-unlink {
-	&:before {
-		content: $icon-unlink;
-	}
+.icon-minus {
+  &:before {
+    content: $icon-minus;
+  }
 }
-.icon-angle-left {
-	&:before {
-		content: $icon-angle-left;
-	}
+.icon-plus {
+  &:before {
+    content: $icon-plus;
+  }
 }
-.icon-angle-right {
-	&:before {
-		content: $icon-angle-right;
-	}
-}
-.icon-angle-up {
-	&:before {
-		content: $icon-angle-up;
-	}
-}
-.icon-angle-down {
-	&:before {
-		content: $icon-angle-down;
-	}
+.icon-published-changes {
+  &:before {
+    content: $icon-published-changes;
+  }
 }
 .icon-check {
-	&:before {
-		content: $icon-check;
-	}
+  &:before {
+    content: $icon-check;
+  }
+}
+.icon-hand-shake {
+  &:before {
+    content: $icon-hand-shake;
+  }
+}
+.icon-financial-system {
+  &:before {
+    content: $icon-financial-system;
+  }
+}
+.icon-management {
+  &:before {
+    content: $icon-management;
+  }
+}
+.icon-youtube-square {
+  &:before {
+    content: $icon-youtube-square;
+  }
+}
+.icon-youtube {
+  &:before {
+    content: $icon-youtube;
+  }
+}
+.icon-whatsapp {
+  &:before {
+    content: $icon-whatsapp;
+  }
+}
+.icon-vk-brand {
+  &:before {
+    content: $icon-vk-brand;
+  }
+}
+.icon-telegram-fly {
+  &:before {
+    content: $icon-telegram-fly;
+  }
+}
+.icon-unlink {
+  &:before {
+    content: $icon-unlink;
+  }
+}
+.icon-angle-left {
+  &:before {
+    content: $icon-angle-left;
+  }
+}
+.icon-angle-right {
+  &:before {
+    content: $icon-angle-right;
+  }
+}
+.icon-angle-up {
+  &:before {
+    content: $icon-angle-up;
+  }
+}
+.icon-angle-down {
+  &:before {
+    content: $icon-angle-down;
+  }
+}
+.icon-youtube-lg {
+  &:before {
+    content: $icon-youtube-lg;
+  }
+}
+.icon-dzen {
+  &:before {
+    content: $icon-dzen;
+  }
 }
