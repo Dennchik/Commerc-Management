@@ -1,0 +1,55 @@
+@use '../core/variables' as *;
+@use '../core/mixins' as *;
+
+//* - [ Cookies - accept] -
+.cookies-accept {
+  position: fixed;
+  width: 100%;
+  z-index: 15;
+  bottom: 0;
+  box-shadow: 2px 0 7px #000;
+  background-color: $color;
+  transform: translateY(100%);
+
+  &__body {
+    max-width: 1440px;
+    margin: auto;
+    padding: 0 2rem;
+  }
+
+  // .cookies-accept__content
+  &__content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+    max-width: 100%;
+    padding: 2rem 0;
+    margin: 0 auto;
+
+    @include screen-425 {
+      flex-direction: column;
+    }
+  }
+
+  // .cookies-accept__text
+  &__text {
+    p {
+      font-size: 12px;
+      color: #fff;
+      line-height: 120%;
+    }
+  }
+
+  // .cookies-accept_buttom
+  &__button {
+    padding: 6px 7.8rem;
+    max-width: 180px;
+
+    span {
+      text-transform: none;
+      text-transform: uppercase;
+      color: $color;
+    }
+  }
+}

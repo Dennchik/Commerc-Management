@@ -100,6 +100,8 @@
 
   // .section-order__button
   &__button {
+    position: relative;
+    max-width: 300px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -110,7 +112,6 @@
     }
 
     .button {
-      display: inline;
       background: $font-color-secondary;
       max-width: 300px;
       width: 100%;
@@ -131,6 +132,24 @@
   // .section-order__form
   &__form {
     height: 100%;
+  }
+
+  .checkbox {
+    @include screen-768 {
+      margin-bottom: 2rem;
+    }
+
+    @include screen-490 {
+      margin-bottom: 12px;
+    }
+
+    // .checkbox__label
+    &__label {
+      cursor: pointer;
+      position: relative;
+      color: $font-color-secondary;
+      letter-spacing: 0px;
+    }
   }
 }
 
@@ -228,22 +247,5 @@
   // .order-form__checkbox
   &__checkbox {
     margin-top: 12px;
-  }
-}
-
-.checkbox {
-  @include screen-768 {
-    margin-bottom: 2rem;
-  }
-
-  @include screen-490 {
-    margin-bottom: 12px;
-  }
-  // .checkbox__label
-  &__label {
-    cursor: pointer;
-    position: relative;
-    color: $font-color-secondary;
-    letter-spacing: 0px;
   }
 }

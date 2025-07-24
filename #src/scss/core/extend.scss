@@ -53,14 +53,6 @@
 
 //* ----------------------------------------------------------------------------
 
-.top-box {
-  padding: 6rem 0 0;
-  min-height: 100vh;
-  @include min-960 {
-    padding: 8rem 0 0;
-  }
-}
-
 .gradient-border-bottom {
   background-image: linear-gradient(
     to left top,
@@ -100,6 +92,28 @@
     ),
     radial-gradient(circle at 100% 0, $color, $color 30%, transparent),
     radial-gradient(ellipse at 30% 2%, #171b1c 0, $color 100%, transparent);
+}
+
+.effect-blick {
+  position: absolute;
+  background: transparent;
+  width: 100%;
+  height: 100%;
+  border-radius: inherit;
+  overflow: hidden;
+  pointer-events: none;
+
+  &::after {
+    position: absolute;
+    content: '';
+    width: 50px;
+    height: 800px;
+    background: linear-gradient(90deg, transparent, #2434449f, transparent);
+    opacity: 0.4;
+    transform: translateY(-50%) rotate(45deg);
+    transition: all 0.1s;
+    animation: blick 3s infinite linear;
+  }
 }
 
 .link_split {
@@ -184,20 +198,6 @@
     }
   }
 }
-
-.is-open {
-  display: grid;
-  width: 100%;
-  transition: grid-template-rows 0.4s ease-in-out;
-  grid-template-columns: 1fr;
-  grid-template-rows: 0fr;
-
-  &._is-open {
-    grid-template-rows: 1fr;
-  }
-}
-
-//! ----------------------------------------------------------------------------
 
 //* ------------------------------- Gradient -----------------------------------
 .grad_underline {

@@ -130,39 +130,58 @@ export function toggleSidebarMenu(sidebarMenu) {
 
 //* - [ Управление открытием модальных окон ]
 export function toggleModal() {
-  const modals = [
-    {
-      triggerSelector: '.button-request',
-      modalSelector: '.request-form',
-    },
-    {
-      triggerSelector: '.ordercall-button',
-      modalSelector: '.order-call-form',
-    },
-    {
-      triggerSelector: '.button-question',
-      modalSelector: '.question-form',
-    },
-  ];
+  const requestButtons = document.querySelectorAll('.button-request');
+  const requestModal = document.querySelector('.request-form');
+  const btnCloseRequest = requestModal.querySelector('.btn-close');
 
-  modals.forEach(({ triggerSelector, modalSelector }) => {
-    const modal = document.querySelector(modalSelector);
-    const triggers = document.querySelectorAll(triggerSelector);
-    const closeBtn = modal.querySelector('.btn-close');
+  const callButtons = document.querySelectorAll('.ordercall-button');
+  const orderCall = document.querySelector('.order-call-form');
+  const btnCloseOrderCall = orderCall.querySelector('.btn-close');
 
-    triggers.forEach((btn) => {
-      btn.addEventListener('click', () => {
-        handleScrollbarOffset(modal);
-        document.body.classList.add('no-scroll');
-        modal.classList.add('is-open');
-      });
+  const questionButtons = document.querySelectorAll('.button-question');
+  const questionForm = document.querySelector('.question-form');
+  const btnCloseQuestion = questionForm.querySelector('.btn-close');
+
+  requestButtons.forEach((modalButton) => {
+    modalButton.addEventListener('click', () => {
+      handleScrollbarOffset(requestModal);
+      document.body.classList.add('no-scroll');
+      requestModal.classList.add('is-open');
     });
+  });
 
-    closeBtn.addEventListener('click', () => {
-      resetScrollbarOffset(modal);
-      modal.classList.remove('is-open');
-      document.body.classList.remove('no-scroll');
+  btnCloseRequest.addEventListener('click', () => {
+    resetScrollbarOffset(requestModal);
+    requestModal.classList.remove('is-open');
+    document.body.classList.remove('no-scroll');
+  });
+  //* -
+  callButtons.forEach((modalButton) => {
+    modalButton.addEventListener('click', () => {
+      handleScrollbarOffset(orderCall);
+      document.body.classList.add('no-scroll');
+      orderCall.classList.add('is-open');
     });
+  });
+
+  btnCloseOrderCall.addEventListener('click', () => {
+    resetScrollbarOffset(orderCall);
+    orderCall.classList.remove('is-open');
+    document.body.classList.remove('no-scroll');
+  });
+  //* -
+  questionButtons.forEach((modalButton) => {
+    modalButton.addEventListener('click', () => {
+      handleScrollbarOffset(questionForm);
+      document.body.classList.add('no-scroll');
+      questionForm.classList.add('is-open');
+    });
+  });
+
+  btnCloseQuestion.addEventListener('click', () => {
+    resetScrollbarOffset(questionForm);
+    questionForm.classList.remove('is-open');
+    document.body.classList.remove('no-scroll');
   });
 }
 
@@ -186,7 +205,6 @@ function handleScrollbarOffset(el) {
     }
   }
 }
-
 //* - [ Устраняем смещение Content'a  ]
 function resetScrollbarOffset(el) {
   document.documentElement.style.removeProperty('--scroll-position');

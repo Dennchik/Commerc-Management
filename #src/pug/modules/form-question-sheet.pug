@@ -1,0 +1,174 @@
+form(action="#" id="form-question").question-sheet
+  ._body.radio-group
+    ._btn-close.btn-close
+      +iconfont('plus', '_icon') 
+    ._content
+      fieldset._fieldset-table
+        legend._title.t-h3 Какой тип вашей коммерческой недвижимости требует управления?
+        ._row 
+          ._line-radio
+            input(type="radio" id="office-1" name="building-type" value="Офисное здание" checked)._input
+            label(for="office-1")._label Офисное здание
+          ._line-radio
+            input(type="radio" id="office-2" name="building-type" value="Торговый центр")._input
+            label(for="office-2")._label Торговый центр
+          ._line-radio
+            input(type="radio" id="office-3" name="building-type" value="Складское помещение")._input
+            label(for="office-3")._label Складское помещение
+          ._line-radio
+            input(type="radio" id="office-4" name="building-type" value="Здание смешанного использования")._input
+            label(for="office-4")._label Здание смешанного использования 
+          ._textarea
+            ._line-radio
+              input(type="radio" id="office-5" name="building-type" value="Другое")._input
+              label(for="office-5")._label Другое 
+                ._text
+                  textarea._comment(id="comment-1" autocomplete="on" type="text" value="" name="comment-1" placeholder="Напишите свой вариант...")
+        ._buttons
+          ._button._btn-next
+            button(type="button").button.t-h2
+              span Далее 
+      fieldset._fieldset-table
+        legend._title.t-h3 Насколько вы&nbsp;заинтересованы в&nbsp;использовании наших услуг по&nbsp;управлению недвижимостью?
+        ._row 
+          ._line-radio
+            input(type="radio" id="int-1" name="interest" value="Очень заинтересован" checked)._input
+            label(for="int-1")._label Очень заинтересован
+          ._line-radio
+            input(type="radio" id="int-2" name="interest" value="Средне заинтересован")._input
+            label(for="int-2")._label Средне заинтересован
+          ._line-radio
+            input(type="radio" id="int-3" name="interest" value="Не заинтересован, но рассматриваю варианты")._input
+            label(for="int-3")._label Не заинтересован, но&nbsp;рассматриваю варианты
+          ._line-radio
+            input(type="radio" id="int-4" name="interest" value="Совсем не заинтересован")._input
+            label(for="int-4")._label Совсем не заинтересован 
+        ._buttons
+          ._button._btn-prew
+            button(type="button").button.t-h2
+              span Назад
+          ._button._btn-next
+            button(type="button").button.t-h2
+              span Далее
+      fieldset._fieldset-table
+        legend._title.t-h3 Каковы ваши основные цели передачи недвижимости в&nbsp;управление?
+        ._row 
+          ._line 
+            input(type="checkbox" id="tasks-1" name="tasks" value="Повышение доходности")._input
+            label(for="tasks-1")._label Повышение доходности
+              +iconfont('check', '_icon')
+          ._line 
+            input(type="checkbox" id="tasks-2" name="tasks" value="Снижение операционных издержек")._input
+            label(for="tasks-2")._label Снижение операционных издержек
+              +iconfont('check', '_icon')
+          ._line 
+            input(type="checkbox" id="tasks-3" name="tasks" value="Увеличение стоимости объекта")._input
+            label(for="tasks-3")._label Увеличение стоимости объекта
+              +iconfont('check', '_icon')
+          ._line 
+            input(type="checkbox" id="tasks-4" name="tasks" value="Освобождение времени для других дел")._input
+            label(for="tasks-4")._label Освобождение времени для&nbsp;других&nbsp;дел
+              +iconfont('check', '_icon')
+          ._line 
+            input(type="checkbox" id="tasks-5" name="tasks" value="Обеспечение качественного обслуживания арендаторов")._input
+            label(for="tasks-5")._label Обеспечение качественного обслуживания арендаторов
+              +iconfont('check', '_icon')
+          ._textarea
+            ._line 
+              input(type="checkbox" id="tasks-6" name="tasks" value="Другое")._input
+              label(for="tasks-6")._label Другое
+                +iconfont('check', '_icon') 
+                ._text
+                  textarea._comment(id="comment-2" autocomplete="on" type="text" value="" name="comment-2" placeholder="Напишите свой вариант...")
+        ._buttons
+          ._button._btn-prew
+            button(type="button").button.t-h2
+              span Назад
+          ._button._btn-next
+            button(type="button").button.t-h2
+              span Далее
+      fieldset._fieldset-table
+        legend._title.t-h3 Какой бюджет вы&nbsp;готовы выделить на&nbsp;услуги по&nbsp;управлению вашей недвижимостью?
+        ._row 
+          ._line-radio
+            input(type="radio" id="budget-1" name="budget" value="До 100,000 ₽ в год" checked)._input
+            label(for="budget-1")._label До&nbsp;100,000&nbsp;₽&nbsp;в&nbsp;год
+          ._line-radio
+            input(type="radio" id="budget-2" name="budget" value="От 100,000 до 500,000 ₽ в год")._input
+            label(for="budget-2")._label От&nbsp;100,000&nbsp;до&nbsp;500,000&nbsp;₽&nbsp;в&nbsp;год
+          ._line-radio
+            input(type="radio" id="budget-3" name="budget" value="От500,000до1,000,000₽ вгод")._input
+            label(for="budget-3")._label От&nbsp;500,000&nbsp;до&nbsp;1,000,000&nbsp;₽&nbsp;в&nbsp;год
+          ._line-radio
+            input(type="radio" id="budget-4" name="budget" value="Более 1,000,000 ₽ в год")._input
+            label(for="budget-4")._label Более&nbsp;1,000,000&nbsp;₽&nbsp;в&nbsp;год 
+        ._buttons
+          ._button._btn-prew
+            button(type="button").button.t-h2
+              span Назад
+          ._button._btn-next
+            button(type="button").button.t-h2
+              span Далее
+      fieldset._fieldset-table
+        legend._title.t-h3 Какие дополнительные услуги вас&nbsp;интересуют?
+        ._row 
+          ._line 
+            input(type="checkbox" id="service-1" name="service" value="Юридическое сопровождение")._input
+            label(for="service-1")._label Юридическое сопровождение
+              +iconfont('check', '_icon')
+          ._line 
+            input(type="checkbox" id="service-2" name="service" value="Финансовый аудит")._input
+            label(for="service-2")._label Финансовый аудит
+              +iconfont('check', '_icon')
+          ._line 
+            input(type="checkbox" id="service-3" name="service" value="PR и&nbsp;маркетинг объекта")._input
+            label(for="service-3")._label PR и&nbsp;маркетинг объекта
+              +iconfont('check', '_icon')
+          ._line 
+            input(type="checkbox" id="service-4" name="service" value="Управление ремонтными работами")._input
+            label(for="service-4")._label Управление ремонтными работами
+              +iconfont('check', '_icon') 
+          ._textarea
+            ._line 
+              input(type="checkbox" id="service-5" name="service" value="Другое")._input
+              label(for="service-5")._label Другое
+                +iconfont('check', '_icon') 
+                ._text
+                  textarea._comment(id="comment-3" autocomplete="on" type="text" value="" name="comment-3" placeholder="Напишите свой вариант...")
+        ._buttons
+          ._button._btn-prew
+            button(type="button").button.t-h2
+              span Назад
+          ._button._btn-next
+            button(type="button").button.t-h2
+              span Далее
+      fieldset._fieldset-table
+        legend._title.t-h3 Готово!
+        p Для предоставления информации менеджером, укажите контактные данные
+        ._row 
+          ._line
+            label(for="name")._lebel 
+            input._input(id="name" placeholder="Имя*" autocomplete="off",
+            type="text"  name="name"  error="Обязательное поле")
+          ._line
+            label(for="phone")._lebel 
+            input._input(type="tel" class="phone" id='phone' placeholder="+7 (___) ___-__-__" autocomplete="off" name="phone" error="Обязательное поле" 
+              )
+          ._line
+            label(for="e-mail")._lebel 
+            input._input(type="tel" class="maile" id='e-mail' placeholder="e-mail" autocomplete="off" name="mail" error="Обязательное поле" 
+            ) 
+          ._line-checkbox
+            input(type="checkbox" id="agree-form" name="agree-form" form="form-question")._input 
+            label(for="agree-form")._label 
+              +iconfont('check', '_icon')
+              span Подтверждаю, что&nbsp;ознакомился&nbsp;(&#8209;лась) с&nbsp;политикой конфиденциальности и&nbsp;даю&nbsp;согласие на&nbsp;обработку персональных 
+        ._buttons
+          ._button._btn-prew
+            button(type="button").button.t-h2
+              span Назад
+          ._button._btn-submit
+            button(type="submit").button.t-h2
+              span Отправить 
+
+

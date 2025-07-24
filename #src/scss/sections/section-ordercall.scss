@@ -127,17 +127,12 @@
 
   // .section-order__button
   &__button {
+    position: relative;
     max-width: 300px;
     display: flex;
     align-items: center;
     justify-content: center;
     color: $font-color-title;
     background: $font-color-secondary;
-
-    span {
-      line-height: 150%;
-      white-space: nowrap;
-      text-transform: uppercase;
-    }
   }
 }

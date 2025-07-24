@@ -94,3 +94,26 @@
   align-items: center;
   justify-content: center;
 }
+
+.btn-grad {
+  position: relative;
+  background: #fff;
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 1) 0%,
+    transparent 75%,
+    rgba(255, 255, 255, 1) 100%
+  );
+
+  text-align: center;
+  text-transform: uppercase;
+
+  transition: background 0.5s;
+  background-size: 500% auto;
+  box-shadow: 0 0 10px #a0a0a0;
+
+  &:hover {
+    background-position: right center;
+    text-decoration: none;
+  }
+}

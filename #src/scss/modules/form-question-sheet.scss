@@ -1,0 +1,328 @@
+@use '../core/variables' as *;
+@use '../core/mixins' as *;
+
+.question-sheet {
+  position: relative;
+  top: 10rem;
+  width: 100%;
+  margin: auto;
+  max-width: 100rem;
+  opacity: 0;
+  transition:
+    top 0.3s,
+    opacity 0.3s;
+
+  // ..question-sheet__body
+  &__body {
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+    align-items: center;
+    padding: 9rem 2rem;
+    min-height: 72rem;
+    display: flex;
+    align-items: center;
+  }
+
+  // .question-sheet__btn-close
+  &__btn-close {
+    position: absolute;
+    top: 1.4rem;
+    right: 1.4rem;
+
+    .icon-plus {
+      color: $color;
+      transform: rotate(45deg);
+      font-size: 3rem;
+    }
+  }
+
+  // .question-sheet__title
+  &__title {
+    font-family: 'PsyType', sans-serif;
+    color: $color;
+    line-height: 100%;
+    letter-spacing: 1.4px;
+    text-align: left;
+    text-transform: uppercase;
+    margin-bottom: 3rem;
+  }
+
+  // .question-sheet__content
+  &__content {
+    position: relative;
+    margin: 0 auto;
+    width: 100%;
+    max-width: 76rem;
+    position: relative;
+    transition: height 0.4s ease;
+    font-size: 1.6rem;
+  }
+
+  // .question-sheet__fieldset-table
+  &__fieldset-table {
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(20px);
+    transition:
+      opacity 0.4s ease,
+      transform 0.4s ease,
+      visibility 0.4s ease;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+
+    .question-sheet__input {
+      pointer-events: none;
+    }
+
+    &.active {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+      position: relative;
+
+      .question-sheet__input {
+        pointer-events: all;
+      }
+    }
+
+    &:nth-child(1) {
+      .question-sheet__buttons {
+        justify-content: flex-end;
+      }
+    }
+
+    &:last-child {
+      .question-sheet__title {
+        text-align: center;
+        margin-bottom: 2rem;
+      }
+      p {
+        padding-bottom: 1.6rem;
+      }
+
+      .question-sheet__line {
+        padding: 15px 20px;
+        border: 1px solid rgb(124, 133, 143);
+        background: rgb(255, 255, 255);
+        gap: 0;
+        input {
+          flex: 1 1 auto;
+          width: 100%;
+        }
+      }
+    }
+  }
+
+  // .question-sheet__row
+  &__row {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  // .question-sheet__line-radio
+  &__line-checkbox,
+  &__line,
+  &__line-radio {
+    position: relative;
+    display: flex;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    gap: 16px;
+    min-height: 20px;
+  }
+
+  &__line-radio {
+    position: relative;
+    display: flex;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    gap: 16px;
+    min-height: 20px;
+
+    input[type='radio']::before {
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      position: relative;
+      background-color: #fff;
+      content: '';
+      display: inline-block;
+      visibility: visible;
+      border: 2px solid $color;
+    }
+
+    .question-sheet__input {
+      &:checked + .question-sheet__label {
+        &::before {
+          scale: 1;
+        }
+      }
+    }
+  }
+
+  // .question-sheet__line
+  &__line-checkbox,
+  &__line {
+    input[type='checkbox']::before {
+      width: 20px;
+      height: 20px;
+      position: relative;
+      background-color: #fff;
+      content: '';
+      display: inline-block;
+      visibility: visible;
+      border: 2px solid $color;
+    }
+
+    .question-sheet__input {
+      &:checked + .question-sheet__label ._icon {
+        scale: 1;
+      }
+    }
+
+    .icon-check {
+      position: absolute;
+      top: 0;
+      left: 0;
+      scale: 0;
+      transition: scale 0.4s ease-in-out;
+      font-size: 30px;
+    }
+  }
+
+  // .question-sheet__textarea
+  &__textarea {
+    display: flex;
+    flex-direction: column;
+
+    .question-sheet__line,
+    .question-sheet__line-radio {
+      align-items: flex-start;
+    }
+
+    .question-sheet__label {
+      flex-direction: column;
+      align-items: start;
+      gap: 8px;
+      line-height: 1;
+
+      .icon-check {
+        top: -7px;
+      }
+
+      &::before {
+        top: 3px;
+      }
+    }
+  }
+
+  // .question-sheet__input
+  &__input {
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    flex: 0 0 20px;
+    width: 20px;
+    height: 20px;
+  }
+
+  // .question-sheet__label
+  &__label {
+    line-height: 130%;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    .icon-check {
+      top: -7px;
+    }
+
+    &::before {
+      position: absolute;
+      left: 3px;
+      content: '';
+      width: 14px;
+      height: 14px;
+      border-radius: 50%;
+      background: $color;
+      scale: 0;
+      transition: scale 0.2s ease-in-out;
+    }
+  }
+
+  // .question-sheet__line-checkbox
+  &__line-checkbox {
+    .icon-check {
+      top: 0;
+    }
+  }
+
+  // .question-sheet__text
+  &__text {
+    box-sizing: border-box;
+    border: 1px solid rgb(124, 133, 143);
+    background: rgba(36, 52, 68, 0.1);
+    width: 100%;
+    padding: 1.5rem 2rem;
+  }
+
+  // .question-sheet__comment
+  &__comment {
+    font-weight: 400;
+    line-height: 130%;
+    width: 100%;
+    height: 100%;
+    font-size: 2rem;
+    overflow: auto;
+    resize: none;
+  }
+
+  &__buttons {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 6rem;
+  }
+
+  // .question-sheet__button
+  &__button {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: end;
+
+    &._btn-prew,
+    &._btn-next {
+      width: 18rem;
+    }
+
+    &._btn-submit {
+      width: 300px;
+    }
+
+    .button {
+      pointer-events: none;
+      color: #fff;
+      background-color: $color;
+      width: 100%;
+      text-align: center;
+    }
+
+    &._btn-prew {
+      .button {
+        color: $color;
+        background: #fff;
+        border: 1px solid $color;
+      }
+    }
+    @include screen-690 {
+      max-height: 48px;
+    }
+  }
+}
