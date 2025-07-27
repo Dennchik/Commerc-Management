@@ -87,7 +87,7 @@ export function sidebarMenuHandle() {
 export function toggleSidebarMenu(sidebarMenu) {
   const asideButton = document.querySelector('.page__aside-button');
   if (sidebarMenu.classList.contains('_open-menu')) {
-    ///* Компенсируем исчезновение scroll bar (если нужно)
+    //* Компенсируем исчезновение scroll bar (если нужно)
 
     sidebarMenu.style.transition = 'transform 0.3s ease';
     sidebarMenu.classList.remove('_open-menu');
@@ -113,7 +113,7 @@ export function toggleSidebarMenu(sidebarMenu) {
     sidebarMenu.style.transition = 'transform 0.3s ease';
     sidebarMenu.classList.add('_open-menu');
 
-    handleScrollbarOffset();
+    handleScrollbarOffset(sidebarMenu);
     document.body.classList.add('no-scroll');
     resetTransitionOnce(sidebarMenu);
   }
@@ -125,6 +125,28 @@ export function toggleSidebarMenu(sidebarMenu) {
     }
 
     element.addEventListener('transitionend', transitionEndHandler);
+  }
+}
+const pageHeader = document.querySelector('.page__header');
+export function handleScrollbarOffset(el) {
+  let scrollY = 0;
+  //* запомнаем текущее положение прокрутки
+  scrollY = window.scrollY || document.documentElement.scrollTop;
+  document.documentElement.style.setProperty(
+    '--scroll-position',
+    `${scrollY}px`
+  );
+
+  //* Компенсируем исчезновение scroll bar (если нужно)
+  const scrollbarWidth =
+    window.innerWidth - document.documentElement.clientWidth;
+
+  if (scrollbarWidth > 0) {
+    document.body.style.paddingRight = `${scrollbarWidth}px`;
+    if (el) {
+      el.style.paddingRight = `${scrollbarWidth}px`;
+      pageHeader.style.paddingRight = `${scrollbarWidth}px`;
+    }
   }
 }
 
@@ -230,33 +252,13 @@ export function fieldsetsToggle() {
   };
 }
 
-function handleScrollbarOffset(el) {
-  let scrollY = 0;
-  //* запомнаем текущее положение прокрутки
-  scrollY = window.scrollY || document.documentElement.scrollTop;
-  document.documentElement.style.setProperty(
-    '--scroll-position',
-    `${scrollY}px`
-  );
-
-  //* Компенсируем исчезновение scroll bar (если нужно)
-  const scrollbarWidth =
-    window.innerWidth - document.documentElement.clientWidth;
-
-  if (scrollbarWidth > 0) {
-    document.body.style.paddingRight = `${scrollbarWidth}px`;
-    if (el) {
-      el.style.paddingRight = `${scrollbarWidth}px`;
-    }
-  }
-}
-
 //* - [ Устраняем смещение Content'a  ]
 function resetScrollbarOffset(el) {
   document.documentElement.style.removeProperty('--scroll-position');
 
   if (el) {
     el.style.paddingRight = '';
+    pageHeader.style.paddingRight = ``;
   }
 
   document.body.style.paddingRight = ''; // Убираем компенсацию scroll bar

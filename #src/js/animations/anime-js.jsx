@@ -39,7 +39,7 @@ export function fadeInItem(elements) {
   document.querySelectorAll(elements).forEach((el) => {
     if (!isMobile) {
       animate(el, {
-        y: ['50%', '0%'],
+        y: ['100%', '0%'],
         opacity: [0.3, 1],
         ease: 'linear',
 
@@ -76,13 +76,13 @@ export function smoothScrollTitle(elements) {
   document.querySelectorAll(elements).forEach((el) => {
     if (!isMobile) {
       animate(el, {
-        x: ['50%', '0%'],
+        x: ['20%', '0%'],
         ease: 'linear',
 
         autoplay: onScroll({
           enter: 'bottom-=100 top',
           leave: 'bottom-=250 bottom',
-          sync: 0.15,
+          sync: 0.1,
           // debug: true,
         }),
       });

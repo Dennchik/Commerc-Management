@@ -28,15 +28,14 @@ import {
   shadowScrollHeader,
   sidebarMenuHandle,
   toggleModal,
-  // fieldsetsToggle,
 } from './layouts/layouts.js';
+
 import { dynamicAdaptive } from './assets/dynamic-adaptive.js';
 import { anchorsSmoothScrolling } from './assets/anchors-smooth-scrolling.js';
 document.addEventListener('DOMContentLoaded', () => {
   cookiesAccept('.cookies-accept', '.cookies-accept__button');
 });
 
-// fieldsetsToggle();
 anchorsSmoothScrolling();
 sidebarMenuHandle();
 dynamicAdaptive();

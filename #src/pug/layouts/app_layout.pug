@@ -37,9 +37,6 @@ html(lang="ru")
                 footer._footer
                   block footer 
                     include footer 
-          nav._aside-menu
-            block burger-menu
-              include ../assets/sidebar-menu 
           ._form-request.request-form
             block form-request
               include ../modules/form-request
@@ -49,6 +46,9 @@ html(lang="ru")
           ._form-questions.questions-form
             block form-question-sheet
               include ../modules/form-question-sheet
+          nav._aside-menu
+            block burger-menu
+              include ../assets/sidebar-menu 
         block cookies
           include ../modules/cookies-accept 
             //- block aside-button
