@@ -24,8 +24,6 @@
     justify-content: center;
     align-items: center;
     padding: 9rem 16px;
-    // max-width: 81.7rem;
-    // max-height: 66.1rem;
   }
 
   &__btn-close {
@@ -54,9 +52,6 @@
     margin: auto;
     width: 100%;
     max-width: 41.7rem;
-
-    @include screen-490 {
-    }
   }
 
   // .order-form__row
@@ -64,7 +59,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 25px;
+    gap: 2rem;
 
     &:not(:last-child) {
       margin-bottom: 6rem;
@@ -103,30 +98,6 @@
         }
       }
     }
-
-    // @include minmax-1440-1920 {
-    //   max-width: calc(215px + (268 - 215) * ((100vw - 1440px) / (1920 - 1440)));
-    //   max-height: calc(48px + (58 - 48) * ((100vw - 1440px) / (1920 - 1440)));
-    // }
-
-    // @include screen-960 {
-    //   max-width: 268px;
-    //   width: 100%;
-    //   max-height: 58px;
-    // }
-
-    // @include screen-690 {
-    //   max-height: 48px;
-    //   &:not(:last-child) {
-    //     flex: 1 1 auto;
-    //   }
-    // }
-
-    // @include screen-490 {
-    //   max-width: 195px;
-    //   max-height: 38px;
-    //   width: 100%;
-    // }
   }
 
   // .order-form__line
@@ -148,12 +119,15 @@
       width: 100%;
       height: 100%;
       line-height: 170%;
-      font-size: 16px;
+      font-size: 1.6rem;
     }
   }
 
   // .order-form__button
   &__button {
+    position: relative;
+    overflow: hidden;
+    max-width: 300px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -173,16 +147,26 @@
     }
   }
 
-  .checkbox {
-    @include screen-768 {
-      margin-bottom: 2rem;
-    }
+  // .section-order__text
+  &__text {
+    font-size: 1.6rem;
+    line-height: 130%;
 
     @include screen-490 {
-      margin-bottom: 12px;
+      font-size: 12px;
     }
+  }
+
+  // .section-list__checkbox
+  &__checkbox {
+    display: flex;
+    gap: 1rem;
+  }
+
+  .checkbox {
     // .checkbox__label
     &__label {
+      margin-top: 3px;
       cursor: pointer;
       position: relative;
       color: $color;

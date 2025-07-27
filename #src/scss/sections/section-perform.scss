@@ -32,22 +32,32 @@
   // .section-perform__content
   &__content {
     position: relative;
+    padding-top: 10rem;
     z-index: 2;
     height: 100%;
     width: 100%;
     min-height: 100vh;
-    padding: 10rem 0 0;
+    overflow: hidden;
     display: flex;
     flex-direction: column;
     justify-content: center;
     max-width: 80%;
+    .tl-1,
+    .tl-2 {
+      transform: translateX(15rem);
+      opacity: 0;
+    }
+    .tl-3 {
+      transform: translateX(40rem);
+      opacity: 0;
+    }
 
-    @include screen-768 {
+    @include screen-960 {
       min-height: 100%;
       padding: 204px 0 40px;
     }
 
-    @include screen-490 {
+    @include screen-690 {
       max-width: 100%;
     }
   }
@@ -64,6 +74,7 @@
 
   // .section-perform__text
   &__text {
+    display: block;
     color: $font-color-secondary;
     line-height: 130%;
     letter-spacing: 0px;

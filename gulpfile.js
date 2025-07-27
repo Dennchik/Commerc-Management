@@ -13,7 +13,6 @@ import notify from 'gulp-notify';
 import plumber from 'gulp-plumber';
 import size from 'gulp-size';
 import sourcemaps from 'gulp-sourcemaps';
-import htmlmin from 'gulp-htmlmin';
 import fs from 'fs';
 
 //* Configuration options
@@ -42,7 +41,6 @@ global.$ = {
   notify: notify,
   fs: fs,
   fileInclude: fileInclude,
-  htmlmin: htmlmin,
   gulpIf: gulpIf,
   debug: debug,
   newer: newer,

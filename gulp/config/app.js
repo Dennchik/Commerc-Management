@@ -1,10 +1,32 @@
 import { gifsicle, mozjpeg, optipng, svgo } from 'gulp-imagemin';
 import pugbem from 'gulp-pugbem';
 import TerserPlugin from 'terser-webpack-plugin';
+import { minify } from 'html-minifier-terser';
+import through2 from 'through2';
 
 const isProd = process.argv.includes('--production');
 const isDev = !isProd;
 
+export function minifyHtml() {
+  return through2.obj(async function (file, _, cb) {
+    if (file.isBuffer()) {
+      try {
+        const result = await minify(file.contents.toString(), {
+          collapseWhitespace: true,
+          removeAttributeQuotes: true,
+          collapseBooleanAttributes: true,
+          removeRedundantAttributes: false, // чтобы не удалял type="text"
+          minifyJS: true,
+          minifyCSS: true,
+        });
+        file.contents = Buffer.from(result);
+      } catch (err) {
+        return cb(err);
+      }
+    }
+    cb(null, file);
+  });
+}
 export const app = {
   isProd: isProd,
   isDev: isDev,
@@ -133,8 +155,10 @@ export const app = {
   htmlMin: {
     collapseWhitespace: true,
     removeAttributeQuotes: true,
-    collapseBooleanAttributes: true, // ← ключевой момент!
-    removeRedundantAttributes: true,
+    collapseBooleanAttributes: true,
+    removeRedundantAttributes: false,
+    minifyJS: true,
+    minifyCSS: true,
   },
   renameScss: {
     extname: '.css',

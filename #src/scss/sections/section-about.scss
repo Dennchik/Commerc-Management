@@ -3,8 +3,10 @@
 .section-about {
   // .section-about__body
   &__body {
+    overflow: hidden;
     padding-top: 6rem;
     padding-bottom: 6rem;
+    // text-align: right;
 
     @include screen-490 {
       padding-top: 16px;
@@ -14,6 +16,7 @@
 
   // .section-about__title
   &__title {
+    width: 100%;
     margin-bottom: 12px;
     font-family: $font-family-title;
     color: $font-color-title;

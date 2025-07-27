@@ -1,254 +1,163 @@
-import anime from 'animejs';
+import {
+  animate,
+  createTimeline,
+  createScope,
+  stagger,
+  text,
+  onScroll,
+} from 'animejs';
 
-//* ----------------------------------------------------------------------------
-export function buttonShow() {
-	let drawer_open = false;
-	const openButtons = document.querySelectorAll('._open-button');
-	openButtons.forEach(openButton => {
-		openButton.addEventListener(
-			'mouseup', function () {
-				cta_button_hide.play();
-			});
-	});
-	document.querySelector('._close-button').addEventListener(
-		'mouseup', function () {
-			if (drawer_open) {
-				slideDown.play();
-				cta_button_show.play();
-			}
-		});
-	let cta_button_show = anime({
-		targets: '._open-button',
-		translateY: ['-15', '0'],
-		opacity: ['0', '1'],
-		easing: 'easeInOutSine',
-		delay: anime.stagger(200),
-		autoplay: false,
-		// loop: false
-		duration: 500,
-		complete: function () {
-		}
-	});
-	let cta_button_hide = anime({
-		targets: '._open-button',
-		translateY: ['0', '-15'],
-		opacity: ['1', '0'],
-		easing: 'easeInOutSine',
-		delay: anime.stagger(200),
-		autoplay: false,
-		// loop: false
-		duration: 500,
-		complete: function () {
-			slideUp.play();
-			drawer_open = true;
-		}
-	});
-	let slideDown = anime({
-		targets: '.page__form-modal',
-		translateY: ['0', '100%'],
-		duration: 1000,
-		autoplay: false,
-		begin: function () {
-			show_hideCTA('flex');
-			drawer_open = false;
-		}
-	});
-	let slideUp = anime({
-		targets: '.page__form-modal',
-		translateY: ['100%', '0'],
-		autoplay: false,
-		begin: function () {
-			show_hideCTA('none');
-		}
-	});
-	function show_hideCTA(param) {
-		document.querySelector('._open-button').style.display = param;
-		// document.querySelector('.cta-text').style.display = param;
-	}
+const isMobile = /Mobi|Android/i.test(navigator.userAgent);
+
+export function fadeInColumn(elements) {
+  document.querySelectorAll(elements).forEach((el, index) => {
+    if (!isMobile) {
+      const offsets = [
+        { enter: 'bottom-=50 top', leave: 'bottom-=200 top' },
+        { enter: 'bottom-=50 top', leave: 'bottom-=450 top' },
+        { enter: 'bottom-=50 top', leave: 'bottom-=650 top' },
+      ];
+
+      const offset = offsets[index] || offsets[0]; // На всякий случай — если больше 3
+
+      animate(el, {
+        y: ['10%', '0%'],
+        opacity: [0.3, 1],
+        ease: 'linear',
+        autoplay: onScroll({
+          enter: offset.enter,
+          leave: offset.leave,
+          sync: 0.25,
+          // debug: true,
+        }),
+      });
+    }
+  });
 }
 
-//* ----------------------------------------------------------------------------
-export function timeLineTextItem() {
-	let timeline = anime.timeline({
-		duration: 750,
-	});
-	timeline.add({
-		targets: '.el-1',
-		translateY: [200, 0],
-		opacity: [0, 1], duration: 1250,
-		delay: anime.stagger(50, { start: 50 }),
-		easing: 'easeInOutSine',
-		begin: function (anim) {
-			anim.animatables.forEach(function (animatable) {
-				animatable.target.style.transition = 'opacity 0.3s ease-out';
-			});
-		}
-	}).add({
-		targets: '.el-2',
-		opacity: [0, 0.7],
-		translateX: [1500, 0],
-		scaleX: [5, 0.7],
-		scaleY: [5, 1.5],
-		delay: anime.stagger(100, { start: 100 }),
-		easing: 'easeInOutSine',
-		begin: function (anim) {
-			anim.animatables.forEach(function (animatable) {
-				animatable.target.style.transition = 'all 0.3s ease-out';
-			});
-		}
-	}).add({
-		targets: '.el-3',
-		opacity: [0, 1],
-		translateY: [-100, 0], duration: 750,
-		delay: anime.stagger(0, { start: 0 }),
-		easing: 'easeInOutSine',
-		begin: function (anim) {
-			anim.animatables.forEach(function (animatable) {
-				animatable.target.style.transition = 'opacity 0.3s ease-out';
-			});
-		}
-	}, 730);
-}
-//* ----------------------------------------------------------------------------
-export function timeLineHeaderItem() {
-	let timeline = anime.timeline({
-		duration: 750,
-	});
-	timeline.add({
-		targets: '.header__item',
-		opacity: [0, 1],
-		translateY: [-100, 0],
-		delay: anime.stagger(100, { start: 100 }),
-		easing: 'easeInOutSine',
-		begin: function (anim) {
-			anim.animatables.forEach(function (animatable) {
-				animatable.target.style.transition = 'all 0.3s ease-out';
-			});
-		}
-	}).add({
-		targets: '.header__item',
-		delay: anime.stagger(100, { start: 500 }),
-		easing: 'easeInOutSine',
-	}, '-=250').add({
-		targets: '.el-logo',
-		opacity: [0, 1],
-		translateX: [-200, 0],
-		duration: 1250,
-		easing: 'easeInOutSine',
-		begin: function (anim) {
-			anim.animatables.forEach(function (animatable) {
-				animatable.target.style.transition = 'opacity 0.3s ease-out';
-			});
-		}
-	}, 50).add({
-		targets: '.el-community',
-		opacity: [0, 1],
-		translateX: [200, 0],
-		// translateY: [9, 10],
-		duration: 1250,
-		easing: 'easeInOutSine',
-		begin: function (anim) {
-			anim.animatables.forEach(function (animatable) {
-				animatable.target.style.transition = 'opacity 0.3s ease-out';
-			});
-		}
-	}, 50);
+export function fadeInItem(elements) {
+  document.querySelectorAll(elements).forEach((el) => {
+    if (!isMobile) {
+      animate(el, {
+        y: ['50%', '0%'],
+        opacity: [0.3, 1],
+        ease: 'linear',
+
+        autoplay: onScroll({
+          enter: 'bottom-=10 top',
+          leave: 'bottom-=250 top',
+          sync: 0.25,
+          // debug: true,
+        }),
+      });
+    }
+  });
 }
 
-//* ----------------------------------------------------------------------------
-export function fadeInSlide() {
-	let fadeInSlide = anime.timeline({
-		duration: 750,
-	});
-	fadeInSlide.add({
-		targets: '.swiper-slide-active .main-slide__title',
-		opacity: [0, 1],
-		translateY: [80, 0],
-		delay: anime.stagger(100, { start: 500 }),
-		easing: 'easeInOutSine',
-		duration: 1000,
-		begin: function (anim) {
-			anim.animatables.forEach(function (animatable) {
-				animatable.target.style.transition = 'opacity 0.3s ease-out';
-			});
-		}
-	}, 50).add({
-		targets: '.swiper-slide-active .main-slide__text',
-		opacity: [0, 1],
-		translateY: [100, 0],
-		delay: anime.stagger(100, { start: 500 }),
-		duration: 1000,
-		easing: 'easeInOutSine',
-		begin: function (anim) {
-			anim.animatables.forEach(function (animatable) {
-				animatable.target.style.transition = 'opacity 0.3s ease-out';
-			});
-		}
-	}, 130);
+export function fadeInBlock(elements) {
+  document.querySelectorAll(elements).forEach((el) => {
+    if (!isMobile) {
+      animate(el, {
+        y: ['20%', '0%'],
+        ease: 'linear',
+
+        autoplay: onScroll({
+          enter: 'bottom-=10 top',
+          leave: 'bottom-=350 top',
+          sync: 0.25,
+          // debug: true,
+        }),
+      });
+    }
+  });
 }
 
-//* --------------------------- Анимация линий ---------------------------------
-export function animationSvgLine(target, reverse) {
-	const path = target.querySelector('.services-slide__image .lines path');
-	// Создаем переменную path
-	anime({
-		targets: path,
-		strokeDashoffset: [anime.setDashoffset, 0],
-		easing: 'easeInOutSine',
-		duration: 500,
-		opacity: [0, 1],
-		delay: function (el, i) {
-			return i * 250;
-		},
-		// Устанавливаем направление анимации в зависимости от параметра reverse
-		direction: reverse ? 'reverse' : 'normal',
-		begin: () => {
-			// Добавляем класс при начале анимации
-			target.classList.add('animating');
-		},
-		complete: () => {
-			if (reverse) {
-				// Удаляем класс после завершения анимации в обратном направлении
-				target.classList.remove('animating');
-				path.setAttribute('stroke-dashoffset', anime.setDashoffset);
-			}
-		}
-	});
+export function smoothScrollTitle(elements) {
+  document.querySelectorAll(elements).forEach((el) => {
+    if (!isMobile) {
+      animate(el, {
+        x: ['50%', '0%'],
+        ease: 'linear',
+
+        autoplay: onScroll({
+          enter: 'bottom-=100 top',
+          leave: 'bottom-=250 bottom',
+          sync: 0.15,
+          // debug: true,
+        }),
+      });
+    }
+  });
 }
 
-//* --------------------------- Анимация текста --------------------------------
-export function animationSvgText(target, reverse) {
-	// Создаем переменную path
-	const textPath = target.querySelectorAll(
-		'.services-slide__image .lines-text path');
+export function animateHeader() {
+  function loopAnimation() {
+    document.querySelectorAll('.header-blink, .button-blink').forEach((el) => {
+      animate(el, {
+        left: ['-100%', '150%'],
+        duration: 3000,
+        easing: 'easeOutSine',
+        direction: 'alternate',
+        loop: false,
+        complete: () => {
+          setTimeout(loopAnimation, 6000); // Пауза между циклами
+        },
+      });
+    });
+  }
 
-	anime({
-		targets: textPath,
-		strokeDashoffset: [0, anime.setDashoffset],
-		easing: 'easeInOutSine',
-		duration: 300,
-		opacity: 1,
-		delay: function (el, i) {
-			return i * 200;
-		},
+  loopAnimation();
 
-		// Устанавливаем направление анимации в зависимости от параметра reverse
-		direction: reverse ? 'reverse' : 'normal',
-		begin: () => {
-			// Добавляем класс при начале анимации
-			target.classList.add('animating');
-		},
-		complete: () => {
-			if (reverse) {
-				// Удаляем класс после завершения анимации в обратном направлении
-				target.classList.remove('animating');
-				textPath.forEach(path => {
-					path.setAttribute('stroke-dashoffset', anime.setDashoffset);
-				});
-			}
-		}
-	});
+  //* - [Анимация главного блока] -
+  const timeline = createTimeline({
+    defaults: { delay: 300, duration: 950 },
+  });
+
+  timeline
+    .add('.tl-1', { x: { from: '15rem' }, opacity: [0, 1] })
+    .add('.tl-2', { x: { from: '15rem' }, opacity: [0, 1] }, 600)
+    .add('.tl-3', { x: { from: '40rem' }, opacity: [0, 1] }, 1200);
+
+  //* - [Анимация Links] -
+  document.querySelectorAll('.header__link-key').forEach((el) => {
+    createScope({
+      root: el,
+      defaults: {
+        ease: 'outQuad',
+        duration: 500,
+      },
+    }).add((scope) => {
+      const { root, methods } = scope;
+
+      // Разбиваем текст на символы
+      text.split(root, {
+        chars: {
+          class: 'char',
+          clone: 'left',
+          wrap: 'clip',
+        },
+      });
+
+      //* Создаём анимацию
+      const rotateAnim = createTimeline({
+        autoplay: false,
+        defaults: { ease: 'inOutQuad', duration: 400 },
+      }).add('.char > span', { x: '100%' }, stagger(5, { use: 'data-char' }));
+
+      //* Обработчики наведения
+      if (!isMobile) {
+        scope.add('onEnter', () => animate(rotateAnim, { progress: 1 }));
+        scope.add('onLeave', () => animate(rotateAnim, { progress: 0 }));
+      }
+
+      root.addEventListener(
+        'pointerenter',
+        /** @type {EventListener} */ (methods.onEnter)
+      );
+      root.addEventListener(
+        'pointerleave',
+        /** @type {EventListener} */ (methods.onLeave)
+      );
+    });
+  });
 }
-
-//* ----------------------------------------------------------------------------
-

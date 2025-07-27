@@ -1,12 +1,34 @@
 import loaded from './assets/preloader.js';
 loaded('.preloader');
+// import { smoother } from './animations/animations.jsx';
 
+// const isMobile = /Mobi|Android/i.test(navigator.userAgent);
+// if (!isMobile) {
+//   smoother();
+// }
+
+import { falidateForm } from './assets/validate-form.js';
+falidateForm();
+import {
+  animateHeader,
+  smoothScrollTitle,
+  fadeInItem,
+  fadeInBlock,
+  fadeInColumn,
+} from './animations/anime-js.jsx';
+
+fadeInColumn('.its-col');
+fadeInBlock('.its-block');
+fadeInItem('.its-el');
+animateHeader();
+smoothScrollTitle('.el-item');
 import {
   maskPhone,
   cookiesAccept,
   shadowScrollHeader,
   sidebarMenuHandle,
   toggleModal,
+  // fieldsetsToggle,
 } from './layouts/layouts.js';
 import { dynamicAdaptive } from './assets/dynamic-adaptive.js';
 import { anchorsSmoothScrolling } from './assets/anchors-smooth-scrolling.js';
@@ -14,6 +36,7 @@ document.addEventListener('DOMContentLoaded', () => {
   cookiesAccept('.cookies-accept', '.cookies-accept__button');
 });
 
+// fieldsetsToggle();
 anchorsSmoothScrolling();
 sidebarMenuHandle();
 dynamicAdaptive();
@@ -32,61 +55,8 @@ console.log(
 );
 //* ----------------------------------------------------------------------------
 
-document.addEventListener('DOMContentLoaded', () => {
-  const container = document.querySelector('.question-sheet__content');
-
-  const updateContainerHeight = () => {
-    const active = container.querySelector(
-      '.question-sheet__fieldset-table.active'
-    );
-
-    if (active) {
-      const height = active.offsetHeight;
-      container.style.height = `${height}px`;
-    }
-  };
-
-  const fieldsets = document.querySelectorAll(
-    '.question-sheet .question-sheet__fieldset-table'
-  );
-  let current = 0;
-
-  const showFieldset = (index) => {
-    fieldsets.forEach((fs) => fs.classList.remove('active'));
-    fieldsets[index].classList.add('active');
-    updateContainerHeight();
-  };
-  showFieldset(current);
-
-  document.querySelectorAll('._btn-next').forEach((btn) => {
-    btn.addEventListener('click', () => {
-      if (current < fieldsets.length - 1) {
-        current++;
-        showFieldset(current);
-      }
-    });
-  });
-
-  document.querySelectorAll('._btn-prew').forEach((btn) => {
-    btn.addEventListener('click', () => {
-      if (current > 0) {
-        current--;
-        showFieldset(current);
-      }
-    });
-  });
-
-  const questionForm = document.querySelector('.question-sheet');
-  const btnCloseQuestion = questionForm.querySelector('.btn-close');
-  btnCloseQuestion.addEventListener('click', () => {
-    // Сброс формы
-    questionForm.reset();
-
-    // Возврат к первому шагу
-    current = 0;
-    showFieldset(current);
-
-    // Обновление высоты
-    updateContainerHeight();
-  });
-});
+// const el = element.querySelector('.button-container');
+// console.log(el);
+// el.addEventListener('click', () => {
+//   console.log('yes');
+// });

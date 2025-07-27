@@ -1,4 +1,4 @@
-@use "../core/all" as *;
+@use '../core/all' as *;
 
 .section-partners {
   // .section-partners__body
@@ -16,6 +16,7 @@
 
   &__content {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     column-gap: 6rem;
 

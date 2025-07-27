@@ -1,4 +1,4 @@
-.section-order.bp-3
+.section-order.bp-3.form-order
 	._body._container 
 		._content 
 			._row
@@ -20,15 +20,17 @@
 								span Полное сопровождение сделки;
 							li._item  
 								span И&nbsp;самое важное: всегда на&nbsp;связи в&nbsp;экстренных ситуациях 24/7!
-					._button(data-da="bp-5" data-da-position="0" data-da-resolution="768") 
-						button(type="button" form="form-order").button.t-h2 
+					._button.button-container(data-da="bp-5" data-da-position="0" data-da-resolution="768") 
+						button(form="form-order" type="button" disabled).button.send-button.t-h2 
 							span Оставить заявку
-						.effect-blick
+							span.grad-blink 
 			._row 
 				._column.bp-5
-					.checkbox(data-da="bp-4" data-da-position="1" data-da-resolution="768") 
-						input(type="checkbox" id="agree" name="agree" form="form-order")._input 
-						label(for="agree")._label 
-							+iconfont('check', '_icon')
-							span Подтверждаю, что&nbsp;ознакомился&nbsp;(&#8209;лась) с&nbsp;политикой конфиденциальности и&nbsp;даю&nbsp;согласие на&nbsp;обработку персональных данных
+					._checkbox(data-da="bp-4" data-da-position="1" data-da-resolution="768") 
+						.checkbox
+							label._label 
+								input(type="checkbox" id="agree" name="agree" form="form-order")._input 
+								span._checked
+									+iconfont('check', '_icon')
+						span._text Подтверждаю, что&nbsp;ознакомился&nbsp;(&#8209;лась) с&nbsp;политикой конфиденциальности и&nbsp;даю&nbsp;согласие на&nbsp;обработку персональных данных
 				._column

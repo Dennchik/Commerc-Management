@@ -1,9 +1,10 @@
 .header
+	.header-blink
 	._container
 		._content
 			._column.el-logo
 				._logo-wrpper 
-					a(href="#home" title="home" )._logo.anchor-link
+					a(href="#home" aria-label="home" )._logo.anchor-link
 						img(src="@@webRoot/img/logo.jpg" alt="Logo") 
 					._text(data-da="bp-6" data-da-position="0" data-da-resolution="768") 
 						span Управление коммерческой недвижимостью
@@ -11,25 +12,25 @@
 				._menu(data-da="bp-7" data-da-position="0" data-da-resolution="768") 
 					ul._menu-items
 						li._item
-							a(href="#about")._link-key.anchor-link.link_underline
+							a(href="#about")._link-key.anchor-link.link_underline-lr 
 								span Компания 
 						li._item
-							a(href="#services")._link-key.anchor-link.link_underline
+							a(href="#services")._link-key.anchor-link.link_underline-lr
 								span Услуги
 						li._item
-							a(href="#project")._link-key.anchor-link.link_underline
+							a(href="#project")._link-key.anchor-link.link_underline-lr
 								span Проекты 
 						li._item
-							a(href="#contacts")._link-key.anchor-link.link_underline
+							a(href="#contacts")._link-key.anchor-link.link_underline-lr
 								span Контакты
 			._column 
 				._phone
 					._phone-item
 						a(href="tel:8 (800) 234-55-44") 
-							span 8 (800) 234-55-44
+							span 8&nbsp;(800)&nbsp;234&#8209;55&#8209;44
 					._phone-item
 						a(href="tel:8 (980) 510-41-96") 
-							span 8 (980) 510-41-96
+							span 8&nbsp;(980)&nbsp;510&#8209;41&#8209;96
 
 
 				//- a.el-community__contact(href="mailto:awdes@yandex.ru?subject=🤝%20Информация%20о%20проекте.%20Давайте%20поговорим.")

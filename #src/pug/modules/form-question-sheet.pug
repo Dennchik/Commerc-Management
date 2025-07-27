@@ -1,4 +1,4 @@
-form(action="#" id="form-question").question-sheet
+form(action="#" id="form-question").form-question.form-order
   ._body.radio-group
     ._btn-close.btn-close
       +iconfont('plus', '_icon') 
@@ -18,12 +18,12 @@ form(action="#" id="form-question").question-sheet
           ._line-radio
             input(type="radio" id="office-4" name="building-type" value="Здание смешанного использования")._input
             label(for="office-4")._label Здание смешанного использования 
+          ._line-radio
+            input(type="radio" id="office-5" name="building-type" value="Другое")._input
+            label(for="office-5")._label Другое 
           ._textarea
-            ._line-radio
-              input(type="radio" id="office-5" name="building-type" value="Другое")._input
-              label(for="office-5")._label Другое 
-                ._text
-                  textarea._comment(id="comment-1" autocomplete="on" type="text" value="" name="comment-1" placeholder="Напишите свой вариант...")
+            span._text
+              textarea._comment(id="comment-1" autocomplete="on" type="text" value="" name="comment-1" placeholder="Напишите свой вариант...")
         ._buttons
           ._button._btn-next
             button(type="button").button.t-h2
@@ -53,33 +53,35 @@ form(action="#" id="form-question").question-sheet
       fieldset._fieldset-table
         legend._title.t-h3 Каковы ваши основные цели передачи недвижимости в&nbsp;управление?
         ._row 
-          ._line 
-            input(type="checkbox" id="tasks-1" name="tasks" value="Повышение доходности")._input
+          ._line-checked 
+            input(type="checkbox" id="tasks-1" name="tasks-1" value="Повышение доходности")._input
             label(for="tasks-1")._label Повышение доходности
               +iconfont('check', '_icon')
-          ._line 
-            input(type="checkbox" id="tasks-2" name="tasks" value="Снижение операционных издержек")._input
+          ._line-checked 
+            input(type="checkbox" id="tasks-2" name="tasks-2" value="Снижение операционных издержек")._input
             label(for="tasks-2")._label Снижение операционных издержек
               +iconfont('check', '_icon')
-          ._line 
-            input(type="checkbox" id="tasks-3" name="tasks" value="Увеличение стоимости объекта")._input
+          ._line-checked 
+            input(type="checkbox" id="tasks-3" name="tasks-3" value="Увеличение стоимости объекта")._input
             label(for="tasks-3")._label Увеличение стоимости объекта
               +iconfont('check', '_icon')
-          ._line 
-            input(type="checkbox" id="tasks-4" name="tasks" value="Освобождение времени для других дел")._input
+          ._line-checked 
+            input(type="checkbox" id="tasks-4" name="tasks-4" value="Освобождение времени для других дел")._input
             label(for="tasks-4")._label Освобождение времени для&nbsp;других&nbsp;дел
               +iconfont('check', '_icon')
-          ._line 
-            input(type="checkbox" id="tasks-5" name="tasks" value="Обеспечение качественного обслуживания арендаторов")._input
+          ._line-checked 
+            input(type="checkbox" id="tasks-5" name="tasks-5" value="Обеспечение качественного обслуживания арендаторов")._input
             label(for="tasks-5")._label Обеспечение качественного обслуживания арендаторов
-              +iconfont('check', '_icon')
-          ._textarea
-            ._line 
-              input(type="checkbox" id="tasks-6" name="tasks" value="Другое")._input
-              label(for="tasks-6")._label Другое
-                +iconfont('check', '_icon') 
-                ._text
-                  textarea._comment(id="comment-2" autocomplete="on" type="text" value="" name="comment-2" placeholder="Напишите свой вариант...")
+              +iconfont('check', '_icon') 
+          ._line-checked 
+            input(type="checkbox" id="tasks-6" name="tasks-6" value="Другое")._input
+            label(for="tasks-6")._label
+              | Другое
+              +iconfont('check', '_icon') 
+          ._line
+            ._textarea
+              span._text
+                textarea._comment(id="comment-2" autocomplete="on" type="text" name="comment-2" placeholder="Напишите свой вариант...")
         ._buttons
           ._button._btn-prew
             button(type="button").button.t-h2
@@ -112,29 +114,31 @@ form(action="#" id="form-question").question-sheet
       fieldset._fieldset-table
         legend._title.t-h3 Какие дополнительные услуги вас&nbsp;интересуют?
         ._row 
-          ._line 
-            input(type="checkbox" id="service-1" name="service" value="Юридическое сопровождение")._input
+          ._line-checked 
+            input(type="checkbox" id="service-1" name="service-1" value="Юридическое сопровождение")._input
             label(for="service-1")._label Юридическое сопровождение
               +iconfont('check', '_icon')
-          ._line 
-            input(type="checkbox" id="service-2" name="service" value="Финансовый аудит")._input
+          ._line-checked 
+            input(type="checkbox" id="service-2" name="service-2" value="Финансовый аудит")._input
             label(for="service-2")._label Финансовый аудит
               +iconfont('check', '_icon')
-          ._line 
-            input(type="checkbox" id="service-3" name="service" value="PR и&nbsp;маркетинг объекта")._input
+          ._line-checked 
+            input(type="checkbox" id="service-3" name="service-3" value="PR и&nbsp;маркетинг объекта")._input
             label(for="service-3")._label PR и&nbsp;маркетинг объекта
               +iconfont('check', '_icon')
-          ._line 
-            input(type="checkbox" id="service-4" name="service" value="Управление ремонтными работами")._input
-            label(for="service-4")._label Управление ремонтными работами
+          ._line-checked 
+            input(type="checkbox" id="service-4" name="service-4" value="Управление ремонтными работами")._input
+            label(for="service-4")._label
+              | Управление ремонтными работами
+              +iconfont('check', '_icon') 
+          ._line-checked 
+            input(type="checkbox" id="service-5" name="service-5" value="Другое")._input
+            label(for="service-5")._label
+              | Другое
               +iconfont('check', '_icon') 
           ._textarea
-            ._line 
-              input(type="checkbox" id="service-5" name="service" value="Другое")._input
-              label(for="service-5")._label Другое
-                +iconfont('check', '_icon') 
-                ._text
-                  textarea._comment(id="comment-3" autocomplete="on" type="text" value="" name="comment-3" placeholder="Напишите свой вариант...")
+            span._text
+              textarea._comment(id="comment-3" autocomplete="on" type="text" name="comment-3" placeholder="Напишите свой вариант...")
         ._buttons
           ._button._btn-prew
             button(type="button").button.t-h2
@@ -147,28 +151,32 @@ form(action="#" id="form-question").question-sheet
         p Для предоставления информации менеджером, укажите контактные данные
         ._row 
           ._line
-            label(for="name")._lebel 
-            input._input(id="name" placeholder="Имя*" autocomplete="off",
-            type="text"  name="name"  error="Обязательное поле")
+            label(for="name-form-question")._label 
+            ._input
+              input.input.name(id="name-form-question" placeholder="Имя*" autocomplete="off" type="text" name="name" error="Обязательное поле")
           ._line
-            label(for="phone")._lebel 
-            input._input(type="tel" class="phone" id='phone' placeholder="+7 (___) ___-__-__" autocomplete="off" name="phone" error="Обязательное поле" 
+            label(for="phone-form-question")._label 
+            ._input
+              input.input.phone(type="tel" id='phone-form-question' placeholder="+7 (___) ___-__-__" autocomplete="off" name="phone" error="Обязательное поле" 
               )
           ._line
-            label(for="e-mail")._lebel 
-            input._input(type="tel" class="maile" id='e-mail' placeholder="e-mail" autocomplete="off" name="mail" error="Обязательное поле" 
-            ) 
-          ._line-checkbox
-            input(type="checkbox" id="agree-form" name="agree-form" form="form-question")._input 
-            label(for="agree-form")._label 
-              +iconfont('check', '_icon')
-              span Подтверждаю, что&nbsp;ознакомился&nbsp;(&#8209;лась) с&nbsp;политикой конфиденциальности и&nbsp;даю&nbsp;согласие на&nbsp;обработку персональных 
+            label(for="mail")._label 
+            ._input
+              input.input(type="tel" class="maile" id='mail' placeholder="e-mail" autocomplete="off" name="mail" error="Обязательное поле" 
+              ) 
+          ._checkbox
+            .checkbox
+              label._label 
+                input(type="checkbox" name="agree-form" form="form-question")._input 
+                span._checked
+                  +iconfont('check', '_icon')
+            span Подтверждаю, что&nbsp;ознакомился&nbsp;(&#8209;лась) с&nbsp;политикой конфиденциальности и&nbsp;даю&nbsp;согласие на&nbsp;обработку персональных 
         ._buttons
           ._button._btn-prew
             button(type="button").button.t-h2
               span Назад
-          ._button._btn-submit
-            button(type="submit").button.t-h2
+          ._button.button-container._btn-submit
+            button(type="button").send-button.button.t-h2
               span Отправить 
 
 

@@ -1,4 +1,4 @@
-form(action="#" id='order-call').order-call
+form(action="#" id='order-call').order-call.form-order
   ._body
     ._btn-close.btn-close
       +iconfont('plus', '_icon')
@@ -7,23 +7,26 @@ form(action="#" id='order-call').order-call
       ._row
         ._column
           ._line
-            label(for="name")._lebel
+            label(for="name-order-call")._lebel
             ._input
-              input.input.name(id="name" placeholder="Имя*" autocomplete="off",
+              input.input.name(id="name-order-call" placeholder="Имя*" autocomplete="off",
               type="text", name="name", error="Обязательное поле")
         ._column
           ._line
-            label(for="phone")._lebel
+            label(for="phone-order-call")._lebel
             ._input
-              input.input(type="tel" class="phone" id='phone' placeholder="+7 (___) ___-__-__" autocomplete="off" name="phone" error="Обязательное поле" 
+              input.input.phone(type="tel" id='phone-order-call' placeholder="+7 (___) ___-__-__" autocomplete="off" name="phone" error="Обязательное поле" 
               ) 
         ._column 
-          .checkbox
-            input(type="checkbox" id="request" name="agree" form="form-request")._input 
-            label(for="request")._label 
-              +iconfont('check', '_icon')
-              span Подтверждаю, что&nbsp;ознакомился&nbsp;(&#8209;лась) с&nbsp;политикой конфиденциальности и&nbsp;даю&nbsp;согласие на&nbsp;обработку персональных 
+          ._checkbox
+            .checkbox
+              label._label 
+                input(type="checkbox" name="agree" form="order-call")._input 
+                span._checked
+                  +iconfont('check', '_icon')
+            span._text Подтверждаю, что&nbsp;ознакомился&nbsp;(&#8209;лась) с&nbsp;политикой конфиденциальности и&nbsp;даю&nbsp;согласие на&nbsp;обработку персональных 
       ._row 
-        ._button
-          button(form="order-call" type="button" disabled="disabled").button.t-h2
+        ._button.button-container
+          button(form="order-call" type="button").send-button.button.t-h2
             span Отправить
+          .button-blink

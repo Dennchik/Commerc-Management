@@ -44,7 +44,6 @@
     height: 35px;
     cursor: pointer;
     transition: all 0.5s ease-in-out;
-    // color: $font-color-link;
     background: transparent;
     display: flex;
     justify-content: center;
@@ -68,17 +67,11 @@
 
 //* ----------------------------------------------------------------------------
 .checkbox {
-  &._error {
-    .checkbox__lable::before {
-      box-shadow: 0px 0px 14px 3px #f16666;
-    }
-  }
-
   // .checkbox__input
   &__input {
     display: none;
 
-    &:checked + .checkbox__label ._icon {
+    &:checked + .checkbox__checked ._icon {
       scale: 1;
     }
   }
@@ -88,14 +81,15 @@
     position: relative;
     display: flex;
     align-items: center;
-    font-size: 16px;
     line-height: 130%;
+    width: 16px;
+    height: 16px;
+    position: relative;
   }
 
   // .checkbox__lable
   &__label {
     cursor: pointer;
-    position: relative;
     display: flex;
     align-items: flex-start;
     font-size: 1.6rem;
@@ -124,7 +118,7 @@
 
     &::before {
       content: '';
-      position: relative;
+      position: absolute;
       flex: 0 0 16px;
       height: 16px;
       width: 16px;
@@ -276,3 +270,15 @@
 }
 
 //* ----------------------------------------------------------------------------
+.button-container {
+  button {
+    background: transparent;
+    transition: background 0.4s ease-in-out;
+    &:disabled {
+      cursor: not-allowed;
+      pointer-events: none;
+      box-shadow: none;
+      background: silver;
+    }
+  }
+}

@@ -60,15 +60,12 @@
 
   // .section-prices__item
   &__item {
-    padding: 2rem 0;
+    padding: 1rem 0;
   }
 
   // .section-prices__list
   &__list {
-    line-height: 150%;
-    li:not(:last-child) {
-      margin-bottom: 0.5rem;
-    }
+    line-height: 130%;
   }
 
   // .section-prices__item-title
@@ -77,7 +74,7 @@
     align-items: center;
     justify-content: space-between;
     opacity: 0.8;
-    margin-bottom: 2rem;
+    margin-bottom: 1rem;
 
     span {
       margin-right: 2rem;
@@ -90,7 +87,7 @@
   // .section-prices__lable
   &__lable {
     font-family: $font-family-title;
-    padding-top: 2rem;
+    padding-top: 1rem;
     font-size: 2.4rem;
     opacity: 0.7;
     border-top: 1px solid #fff;
@@ -148,6 +145,7 @@
       max-width: 300px;
       width: 100%;
       text-align: center;
+      background: $font-color-secondary;
     }
 
     @include screen-768 {

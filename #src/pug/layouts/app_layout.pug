@@ -25,7 +25,7 @@ html(lang="ru")
     include ../modules/preloader
     include ../includes/mixins
     .wrapper
-      .page
+      .page 
         block header 
           header.page__header
             include ../layouts/header
@@ -46,7 +46,7 @@ html(lang="ru")
           ._order-call.order-call-form
             block order-call
               include ../modules/form-order-call
-          ._question-sheet.question-form 
+          ._form-questions.questions-form
             block form-question-sheet
               include ../modules/form-question-sheet
         block cookies

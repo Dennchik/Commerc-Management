@@ -1,8 +1,18 @@
 @use '../core/all' as *;
 
+.scroll-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: #00ffea34;
+  pointer-events: none;
+  z-index: 20;
+}
 .page {
   // .page__form-request
-  &__question-sheet,
+  &__form-questions,
   &__form-request,
   &__order-call {
     position: fixed;
@@ -21,8 +31,7 @@
 
     &.is-open {
       opacity: 1;
-      pointer-events: none;
-      .question-sheet,
+      .form-question,
       .form-request,
       .order-call {
         top: 0;
@@ -46,7 +55,7 @@
 
   // .page__header
   &__header {
-    position: sticky;
+    position: fixed;
     z-index: 17;
     top: 0;
     left: 0;
@@ -76,12 +85,19 @@
 .main-content {
   // .main-content__section
   &__section {
+    overflow: hidden;
     position: relative;
     z-index: 1;
     width: 100%;
     height: 100%;
   }
+
+  &__footer {
+    background: #243444;
+  }
 }
+
+//* - [ @keyframes Animations ] -
 // @keyframes blick {
 //   0% {
 //     left: -30px;

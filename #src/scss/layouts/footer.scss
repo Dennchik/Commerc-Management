@@ -1,12 +1,11 @@
 @use '../core/all' as *;
 
 .footer {
-  background: #243444;
   margin: 6rem 0;
 
   &__footer {
     line-height: 150%;
-    padding: 3rem 0;
+    padding-bottom: 3rem;
     font-size: 1.4rem;
     color: #fff;
     display: flex;
@@ -76,13 +75,6 @@
   &__column {
     &:nth-child(1) {
       flex: 0 1 auto;
-      margin-bottom: 2rem;
-    }
-
-    &:nth-child(2) {
-      flex: 0 1 max-content;
-      display: flex;
-      justify-content: center;
     }
   }
 

@@ -1,10 +1,10 @@
 .section-prices 
 	._body._container
 		hgroup._hgroup 
-			h2._title.t-h1 Стоимость услуг
-			p Мы не просто <b>управляем недвижимостью&nbsp;—</b> мы&nbsp;<b>максимизируем ее&nbsp;доходность</b> и&nbsp;<b>минимизируем риски</b> собственника!
+			h2._title.t-h1.el-item  Стоимость услуг
+			p.its-el Мы не просто <b>управляем недвижимостью&nbsp;—</b> мы&nbsp;<b>максимизируем ее&nbsp;доходность</b> и&nbsp;<b>минимизируем риски</b> собственника!
 		._content 
-			._column
+			._column.its-col
 				h3._item-title.t-h3 
 					span Управление арендаторами 
 					+iconfont('management', '_icon')
@@ -33,9 +33,10 @@
 						._col-text.t-h3  7% от МАП
 						._col-text.t-h3  от 10% от МАП
 				._button
-					button.button.t-h2.btn-grad 
+					button(type="button").button.t-h2 
 						span Заказать
-			._column
+						span.grad-blink
+			._column.its-col
 				h3._item-title.t-h3  
 					span Управление недвижимостью
 					+iconfont('financial-system', '_icon')
@@ -64,9 +65,10 @@
 						._col-text.t-h3  8% от ФОТ
 						._col-text.t-h3  от 12% от ФОТ
 				._button
-					button.button.t-h2.btn-grad 
+					button(type="button").button.t-h2 
 						span Заказать
-			._column
+						span.grad-blink
+			._column.its-col
 				h3._item-title.t-h3  
 					span Доверительное управление
 					+iconfont('hand-shake', '_icon')
@@ -95,6 +97,7 @@
 						._col-text.t-h3  10% от прибыли
 						._col-text.t-h3  от 15% от пр.
 				._button
-					button.button.t-h2.btn-grad 
+					button(type="button").button.t-h2
 						span Заказать
+						span.grad-blink
 

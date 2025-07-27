@@ -1,4 +1,4 @@
-form(action="#" id='form-request').form-request
+form(action="#" id='form-request').form-request.form-order
 	._body
 		._btn-close.btn-close
 			+iconfont('plus', '_icon')
@@ -7,15 +7,15 @@ form(action="#" id='form-request').form-request
 			._row
 				._column
 					._line
-						label( for="name")._lebel
+						label(for="name-form-request")._lebel
 						._input
-							input.input.name(id="name" placeholder="Имя*" autocomplete="off",
-							type="text"  name="name"  error="Обязательное поле")
+							input.input.name(id="name-form-request" placeholder="Имя*" autocomplete="off",
+							type="text" name="name" error="Обязательное поле")
 				._column
 					._line
-						label(for="phone")._lebel
+						label(for="phone-form-request")._lebel
 						._input
-							input.input(type="tel" class="phone" id='phone' placeholder="+7 (___) ___-__-__" autocomplete="off" name="phone" error="Обязательное поле" 
+							input.input.phone(type="tel" id='phone-form-request' placeholder="+7 (___) ___-__-__" autocomplete="off" name="phone" error="Обязательное поле" 
 							)
 				._column
 					._line
@@ -24,12 +24,15 @@ form(action="#" id='form-request').form-request
 							input.input(type="tel" class="maile" id='e-mail' placeholder="e-mail" autocomplete="off" name="mail" error="Обязательное поле" 
 							)
 				._column 
-					.checkbox
-						input(type="checkbox" id="call" name="agree" form="form-request")._input 
-						label(for="call")._label 
-							+iconfont('check', '_icon')
-							span Подтверждаю, что&nbsp;ознакомился&nbsp;(&#8209;лась) с&nbsp;политикой конфиденциальности и&nbsp;даю&nbsp;согласие на&nbsp;обработку персональных 
+					._checkbox
+						.checkbox
+							label._label 
+								input(type="checkbox" name="agree" form="form-request")._input
+								span._checked
+									+iconfont('check', '_icon')
+						span._text Подтверждаю, что&nbsp;ознакомился&nbsp;(&#8209;лась) с&nbsp;политикой конфиденциальности и&nbsp;даю&nbsp;согласие на&nbsp;обработку персональных 
 			._row 
-				._button
-					button(form="form-request" type="button" disabled="disabled").button.t-h2
-						span Оставить заявку
+				._button.button-container
+					button(form="form-request" type="button").send-button.button.t-h2
+						span Оставить заявку 
+					.button-blink 

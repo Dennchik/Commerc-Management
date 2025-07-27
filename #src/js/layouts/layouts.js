@@ -141,7 +141,7 @@ export function toggleModal() {
     },
     {
       triggerSelector: '.button-question',
-      modalSelector: '.question-form',
+      modalSelector: '.questions-form',
     },
   ];
 
@@ -155,6 +155,11 @@ export function toggleModal() {
         handleScrollbarOffset(modal);
         document.body.classList.add('no-scroll');
         modal.classList.add('is-open');
+
+        if (modalSelector === '.questions-form') {
+          const { showFieldset } = fieldsetsToggle(); // Получаем showFieldset
+          showFieldset(0); // Активируем первый fieldset
+        }
       });
     });
 
@@ -162,8 +167,67 @@ export function toggleModal() {
       resetScrollbarOffset(modal);
       modal.classList.remove('is-open');
       document.body.classList.remove('no-scroll');
+
+      if (modalSelector === '.questions-form') {
+        const active = modal.querySelector(
+          '.form-question__fieldset-table.active'
+        );
+        if (active) {
+          active.classList.remove('active');
+          console.log('Класс active удалён');
+        } else {
+          console.log('Нет активного fieldset');
+        }
+      }
     });
   });
+}
+
+//* - [Переклюение полей формы]
+export function fieldsetsToggle() {
+  const container = document.querySelector('.form-question__content');
+  const fieldsets = document.querySelectorAll(
+    '.form-question .form-question__fieldset-table'
+  );
+  let current = 0;
+
+  const updateContainerHeight = () => {
+    const active = container.querySelector(
+      '.form-question__fieldset-table.active'
+    );
+    if (active) {
+      const height = active.offsetHeight;
+      container.style.height = `${height}px`;
+    }
+  };
+
+  const showFieldset = (index) => {
+    fieldsets.forEach((fs) => fs.classList.remove('active'));
+    fieldsets[index].classList.add('active');
+    updateContainerHeight();
+  };
+
+  document.querySelectorAll('._btn-next').forEach((btn) => {
+    btn.addEventListener('click', () => {
+      if (current < fieldsets.length - 1) {
+        current++;
+        showFieldset(current);
+      }
+    });
+  });
+
+  document.querySelectorAll('._btn-prew').forEach((btn) => {
+    btn.addEventListener('click', () => {
+      if (current > 0) {
+        current--;
+        showFieldset(current);
+      }
+    });
+  });
+
+  return {
+    showFieldset, // 👈 экспортируем
+  };
 }
 
 function handleScrollbarOffset(el) {
@@ -211,7 +275,6 @@ export function cookiesAccept(el, trigger) {
 
   if (button) {
     button.addEventListener('click', () => {
-      console.log('работает');
       cookiesAccept.style.transform = 'translateY(100%)';
       cookiesAccept.style.transition = 'transform 0.5s ease';
     });

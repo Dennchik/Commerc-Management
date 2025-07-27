@@ -98,12 +98,13 @@
 .btn-grad {
   position: relative;
   background: #fff;
-  background: linear-gradient(
-    135deg,
-    rgba(255, 255, 255, 1) 0%,
-    transparent 75%,
-    rgba(255, 255, 255, 1) 100%
-  );
+  // background: linear-gradient(
+  //   135deg,
+  //   rgba(255, 255, 255, 1) 0%,
+  //   transparent 75%,
+  //   rgba(255, 255, 255, 1) 100%
+  // );
+  background: linear-gradient(90deg, #fff, rgba(4, 217, 255, 0.26), #fff);
 
   text-align: center;
   text-transform: uppercase;
@@ -115,5 +116,14 @@
   &:hover {
     background-position: right center;
     text-decoration: none;
+  }
+}
+.button {
+  &:hover {
+    .grad-blink {
+      background-position: right center;
+      text-decoration: none;
+      transform: translateX(80%);
+    }
   }
 }

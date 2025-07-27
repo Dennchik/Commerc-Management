@@ -1,16 +1,15 @@
 .footer._container#contacts
 	._body 
 		._header
-			h2._title.t-h1 Контакты 
-			._network
-				//- ._title.t-h2 Соцсети
+			h2._title.t-h1.el-item Контакты 
+			._network 
 				.network
 					._network-links 
-						a(href="https://t.me/" target="_blank")._icon-link
+						a(href="https://t.me/" target="_blank" aria-label="Телеграм")._icon-link
 							+iconfont('telegram-fly', '_icon')
-						a(href="https://wa.me/" target="_blank")._icon-link
+						a(href="https://wa.me/" target="_blank" aria-label="WhatsApp")._icon-link
 							+iconfont('whatsapp', '_icon')
-						a(href="https://wa.me/" target="_blank")._icon-link
+						a(href="https://vk/" target="_blank" aria-label="Контакт")._icon-link
 							+iconfont('vk-brand', '_icon')
 		._content 
 			._column
@@ -66,9 +65,6 @@
 							._item
 								._title.t-h2 ОКВЭД
 								._text.t-text 68.32
-			._column
-				._image-01._img
-					img(src="@@webRoot/img/map-01.png" alt="image") 
 	._footer 
 		._icon
 			img(src="@@webRoot/img/icons/sd.png" alt="иконка")
