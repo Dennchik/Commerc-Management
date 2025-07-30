@@ -72,13 +72,21 @@ export function sidebarMenuHandle() {
       burgerButton.classList.toggle('is-active');
 
       if (burgerButton.classList.contains('is-active')) {
-        // document.body.classList.add('no-scroll');
         toggleSidebarMenu(sidebarMenu);
         header.classList.add('with-shadow');
       } else if (!burgerButton.classList.contains('is-active')) {
-        // document.body.classList.remove('no-scroll');
         toggleSidebarMenu(sidebarMenu);
         header.classList.remove('with-shadow');
+      }
+    });
+  });
+
+  window.addEventListener('resize', () => {
+    burgerButtons.forEach((burgerButton) => {
+      if (burgerButton.classList.contains('is-active')) {
+        document.body.classList.remove('no-scroll');
+        sidebarMenu.classList.remove('_open-menu');
+        burgerButton.classList.remove('is-active');
       }
     });
   });
@@ -88,7 +96,6 @@ export function toggleSidebarMenu(sidebarMenu) {
   const asideButton = document.querySelector('.page__aside-button');
   if (sidebarMenu.classList.contains('_open-menu')) {
     //* Компенсируем исчезновение scroll bar (если нужно)
-
     sidebarMenu.style.transition = 'transform 0.3s ease';
     sidebarMenu.classList.remove('_open-menu');
 
@@ -127,6 +134,8 @@ export function toggleSidebarMenu(sidebarMenu) {
     element.addEventListener('transitionend', transitionEndHandler);
   }
 }
+
+//* - [Компенсируес отступы при отурытии Modal]
 const pageHeader = document.querySelector('.page__header');
 export function handleScrollbarOffset(el) {
   let scrollY = 0;

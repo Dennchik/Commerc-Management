@@ -76,6 +76,9 @@
     justify-content: center;
     color: $font-color-secondary;
     background: $font-color-title;
+    .button {
+      box-shadow: 0 0 10px #000;
+    }
 
     span {
       line-height: 150%;
