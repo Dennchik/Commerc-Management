@@ -1,4 +1,4 @@
-@use 'core/all.scss' as *;
+@use '../core/all.scss' as *;
 
 .section-about {
   // .section-about__body
@@ -6,7 +6,6 @@
     overflow: hidden;
     padding-top: 6rem;
     padding-bottom: 6rem;
-    // text-align: right;
 
     @include screen-490 {
       padding-top: 16px;
@@ -28,16 +27,23 @@
   // .section-about__content
   &__content {
     display: grid;
-    grid-template-columns: 1fr minmax(320px, 420px);
-    gap: 6rem;
+    grid-template-columns: 1fr minmax(320px, 620px);
 
-    @include screen-768 {
+    @include minmax-920-1920 {
+      grid-template-columns:
+        1fr
+        calc(320px + (620 - 320) * ((100vw - 920px) / (1920 - 920)));
+      gap: 6rem;
+    }
+
+    @include screen-920 {
       display: flex;
       flex-direction: column;
+      gap: 3rem;
     }
 
     @include screen-490 {
-      gap: 32px;
+      gap: 3rem;
     }
   }
 
@@ -45,12 +51,17 @@
   &__column {
     width: 100%;
 
-    &:nth-child(1) {
-      flex: 0 1 56%;
+    &:nth-child(2) {
+      .section-about__image {
+        img {
+          object-fit: contain;
+        }
+      }
     }
 
-    &:nth-child(2) {
-      flex: 0 1 44%;
+    &:nth-child(3) {
+      grid-column: 1 / 3;
+      color: #243444;
     }
   }
 
@@ -58,7 +69,6 @@
   &__image {
     position: relative;
     width: 100%;
-    height: 100%;
 
     img {
       position: relative;

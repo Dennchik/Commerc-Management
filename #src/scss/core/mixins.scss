@@ -179,6 +179,18 @@
   }
 }
 
+@mixin minmax-960-1920 {
+  @media (min-width: 960.98px) and (max-width: 1920px) {
+    @content;
+  }
+}
+
+@mixin minmax-920-1920 {
+  @media (min-width: 920.98px) and (max-width: 1920px) {
+    @content;
+  }
+}
+
 @mixin minmax-768-1920 {
   @media (min-width: 768.98px) and (max-width: 1920px) {
     @content;

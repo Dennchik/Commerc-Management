@@ -18,15 +18,11 @@
     max-width: 100%;
   }
 
-  .header__menu-items {
-    color: #fff;
-  }
-
   &._open-menu {
     transform: translateX(0);
   }
 
-  @include min-768 {
+  @include min-960 {
     display: none;
   }
 
@@ -66,11 +62,15 @@
     text-shadow: none;
 
     .header__menu-items {
-      height: 100%;
       flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      gap: 4rem;
+      justify-content: flex-start;
+      align-items: start;
+      gap: 2rem;
+      color: #fff;
+    }
+
+    .header__sub-item {
+      padding: 5px 20px;
     }
   }
 

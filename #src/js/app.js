@@ -1,7 +1,6 @@
 //* ----------------------------------------------------------------------------
 import { buildSwiper } from './layouts/build-swiper.js';
 buildSwiper();
-import { swiperSlelide } from './layouts/main-slide.js';
-swiperSlelide('.slide-swiper');
+import { swiperSlide } from './layouts/main-slide.js';
+swiperSlide('.slide-swiper');
 //* ----------------------------------------------------------------------------
-

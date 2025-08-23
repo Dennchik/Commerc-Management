@@ -1,51 +1,61 @@
-import pluginJs from '@eslint/js';
-import pluginReact from 'eslint-plugin-react';
 import globals from 'globals';
-
+import reactHooks from 'eslint-plugin-react-hooks';
+import reactRefresh from 'eslint-plugin-react-refresh';
+import react from 'eslint-plugin-react';
+import js from '@eslint/js';
+import ts from '@typescript-eslint/eslint-plugin';
+import tsParser from '@typescript-eslint/parser';
 
 export default [
   {
-    files: ['**/*.{js,mjs,cjs,jsx}'],
-    ignores: ['node_modules/**'], // Исключаем папку node_modules
-  },
-  {
+    files: ['#src/**/*.{js,mjs,cjs,jsx,tsx}'],
+    ignores: ['node_modules/**'],
     languageOptions: {
+      parser: tsParser,
+      ecmaVersion: 'latest',
       globals: {
-        ...globals.browser, // Глобальные переменные для браузера
-        ...globals.node, // Глобальные переменные для Node.js
-        $: 'readonly', // Обозначаем $ как глобальную переменную
-        require: true, // Add this line to disable the 'require' is not  defined
-        // warning
-        global: true // Добавьте эту строку, чтобы отключить предупреждение
-        // 'global' is not defined
+        ...globals.browser,
+        ...globals.node
       },
-    }
-  },
-  {
+      parserOptions: {
+        ecmaVersion: 'latest',
+        sourceType: 'module',
+        ecmaFeatures: { jsx: true }
+      }
+    },
+    plugins: {
+      '@typescript-eslint': ts,
+      'react-hooks': reactHooks,
+      'react-refresh': reactRefresh,
+      react
+    },
     rules: {
-      'no-mixed-spaces-and-tabs': 'off', // Запретить смешивание пробелов и табуляций
-      'semi': ['error', 'always'],
-      'quotes': ['warn', 'single', { // Предупреждение за использование одинарных кавычек
-        'avoidEscape': true, // Позволяет использовать одинарные кавычки для экранирования
-        'allowTemplateLiterals': true // Позволяет использовать шаблонные литералы
-      }],
-      'react/prop-types': 'error', // Отключить проверку типов через prop-types
-      'react/react-in-jsx-scope': 'error', // Отключить требование импортировать React в файлах JSX (не требуется с React 17+)
-      // 'no-unused-vars': 'off' // Полностью отключить проверку неиспользуемых переменных
+      ...js.configs.recommended.rules,
+      ...react.configs.recommended.rules,
+      ...react.configs['jsx-runtime'].rules,
+      ...reactHooks.configs.recommended.rules,
+      ...ts.configs.recommended.rules,
+
+      //* правила
+      semi: ['error', 'always'],
+      quotes: [
+        'warn',
+        'single',
+        { avoidEscape: true, allowTemplateLiterals: true }
+      ],
+      'comma-dangle': ['error', 'never'],
+      'no-unused-vars': ['error', { varsIgnorePattern: '^[A-Z_]' }],
+      'no-mixed-spaces-and-tabs': 'off',
+
+      //* react
+      'react/prop-types': 'off', // отключаем propTypes (будем использовать TS)
+      'react/react-in-jsx-scope': 'off', // React 17+ не требует import React
+      'react-hooks/rules-of-hooks': 'error',
+      'react-hooks/exhaustive-deps': 'warn',
+      'react/jsx-no-target-blank': ['error', { enforceDynamicLinks: 'always' }]
     },
-  },
-  // Добавляем раздел overrides
-  {
-    'env': {
-      'node': true
-    },
-    'files': [
-      '.eslintrc.{js,jsx}'
-    ],
-    'parserOptions': {
-      'sourceType': 'script'
+    settings: {
+      react: { version: 'detect' },
     }
-  },
-  pluginJs.configs.recommended,
-  pluginReact.configs.flat.recommended,
+  }
 ];

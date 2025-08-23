@@ -1,0 +1,89 @@
+@use '../core/mixins' as *;
+@use '../core/variables' as *;
+
+/* Настраиваемые переменные */
+$marquee-speed-seconds: 9s; // чем меньше — тем быстрее
+
+.running-line {
+  pointer-events: none;
+  // .running-line__body
+  &__body {
+    background: $color;
+    overflow: hidden;
+    padding-top: 6rem;
+    padding-bottom: 6rem;
+    display: flex;
+    align-items: center;
+    min-height: 2.5rem;
+
+    @include screen-490 {
+      padding-top: 16px;
+      padding-bottom: 16px;
+    }
+  }
+
+  // .running-line__content
+  &__content {
+    opacity: 0.7;
+  }
+
+  // .running-line__marquee
+  &__marquee {
+    cursor: pointer;
+    padding: 2rem 0;
+    pointer-events: all;
+    width: auto;
+    display: inline-flex;
+    align-items: center;
+    /* Чтобы анимация была бесшовной — ширина содержимого должна быть авто,
+     а в keyframes мы сдвигаем на 50% (поскольку у нас 2 копии) */
+    animation: lineMarquee $marquee-speed-seconds linear infinite alternate;
+    will-change: transform;
+    animation-play-state: paused; // изначально анимация остановлена
+  }
+
+  // .running-line__text
+  &__text {
+    color: #fff;
+    filter: contrast(130%);
+    display: inline-block;
+    line-height: 1;
+    white-space: nowrap;
+    pointer-events: none;
+  }
+
+  /* Пауза при наведении (и при фокусе, для доступа с клавиатуры) */
+  &:hover,
+  &:focus-within {
+    .running-line__marquee {
+      animation-play-state: paused !important;
+    }
+  }
+}
+
+/* уважать предпочтение уменьшенного движения */
+@media (prefers-reduced-motion: reduce) {
+  .running-line__marquee {
+    animation: none;
+    /* можно сделать альтернативное поведение — статичный текст, скролл по hover и т.п. */
+  }
+}
+
+/* анимация: сдвигаем на 50% (одна копия длины) */
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+@keyframes lineMarquee {
+  0% {
+    transform: translate3d(calc(-25% + 1rem), 0, 0);
+  }
+
+  100% {
+    transform: translate3d(calc(-50% + 1rem), 0, 0);
+  }
+}

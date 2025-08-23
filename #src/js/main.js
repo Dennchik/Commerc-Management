@@ -1,25 +1,29 @@
 import loaded from './assets/preloader.js';
 loaded('.preloader');
-// import { smoother } from './animations/animations.jsx';
+import { smoother } from './animations/animations.jsx';
 
-// const isMobile = /Mobi|Android/i.test(navigator.userAgent);
-// if (!isMobile) {
-//   smoother();
-// }
+const isMobile = /Mobi|Android/i.test(navigator.userAgent);
+if (!isMobile) {
+  smoother();
+}
 
-import { falidateForm } from './assets/validate-form.js';
-falidateForm();
+import { validateForm } from './assets/validate-form.js';
+validateForm();
 import {
   animateHeader,
   smoothScrollTitle,
   fadeInItem,
   fadeInBlock,
   fadeInColumn,
+  fadeInItemLeft,
+  fadeInItemRight,
 } from './animations/anime-js.jsx';
 
 fadeInColumn('.its-col');
 fadeInBlock('.its-block');
 fadeInItem('.its-el');
+fadeInItemLeft('.its-el-left');
+fadeInItemRight('.its-el-right');
 animateHeader();
 smoothScrollTitle('.el-item');
 import {
@@ -28,6 +32,7 @@ import {
   shadowScrollHeader,
   sidebarMenuHandle,
   toggleModal,
+  lineMarquee,
 } from './layouts/layouts.js';
 
 import { dynamicAdaptive } from './assets/dynamic-adaptive.js';
@@ -35,7 +40,9 @@ import { anchorsSmoothScrolling } from './assets/anchors-smooth-scrolling.js';
 document.addEventListener('DOMContentLoaded', () => {
   cookiesAccept('.cookies-accept', '.cookies-accept__button');
 });
-
+document.addEventListener('DOMContentLoaded', () => {
+  lineMarquee('.running-line__marquee');
+});
 anchorsSmoothScrolling();
 sidebarMenuHandle();
 dynamicAdaptive();
@@ -53,9 +60,3 @@ console.log(
     'border-right: 2px solid black; border-bottom: 30px solid red;'
 );
 //* ----------------------------------------------------------------------------
-
-// const el = element.querySelector('.button-container');
-// console.log(el);
-// el.addEventListener('click', () => {
-//   console.log('yes');
-// });

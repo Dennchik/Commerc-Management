@@ -1,7 +1,7 @@
 //* import Swiper bundle with all modules installed
 import Swiper from 'swiper/bundle';
 
-export function swiperSlelide(Slide) {
+export function swiperSlide(Slide) {
   if (Slide) {
     new Swiper(Slide, {
       speed: 800,

@@ -1,5 +1,4 @@
 import data from 'gulp-data';
-import webpHtml from 'gulp-html-webp';
 import pug from 'gulp-pug';
 import { minifyHtml } from '../config/app.js';
 
@@ -27,7 +26,7 @@ export function pugJade() {
     )
     .pipe(pug($.app.pug))
     .pipe($.fileInclude($.app.include))
-    .pipe(webpHtml())
+    // .pipe(webpHtml())
     .pipe(minifyHtml())
     .pipe($.gulp.dest($.path.pug.dest))
     .pipe($.gulpIf($.app.isDev, $.debug({ title: '(PugJade)' })));

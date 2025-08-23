@@ -54,6 +54,44 @@ export function fadeInItem(elements) {
   });
 }
 
+export function fadeInItemLeft(elements) {
+  document.querySelectorAll(elements).forEach((el) => {
+    if (!isMobile) {
+      animate(el, {
+        x: ['30%', '0%'],
+        opacity: [0, 1],
+        ease: 'linear',
+
+        autoplay: onScroll({
+          enter: 'bottom-=10 top',
+          leave: 'bottom-=250 top',
+          sync: 0.25,
+          // debug: true,
+        }),
+      });
+    }
+  });
+}
+
+export function fadeInItemRight(elements) {
+  document.querySelectorAll(elements).forEach((el) => {
+    if (!isMobile) {
+      animate(el, {
+        x: ['-30%', '0%'],
+        opacity: [0, 1],
+        ease: 'linear',
+
+        autoplay: onScroll({
+          enter: 'bottom-=10 top',
+          leave: 'bottom-=250 top',
+          sync: 0.25,
+          // debug: true,
+        }),
+      });
+    }
+  });
+}
+
 export function fadeInBlock(elements) {
   document.querySelectorAll(elements).forEach((el) => {
     if (!isMobile) {
@@ -117,7 +155,9 @@ export function animateHeader() {
     .add('.tl-1', { x: { from: '15rem' }, opacity: [0, 1] })
     .add('.tl-2', { x: { from: '15rem' }, opacity: [0, 1] }, 600)
     .add('.tl-3', { x: { from: '40rem' }, opacity: [0, 1] }, 1200);
+}
 
+export function animateLinks() {
   //* - [Анимация Links] -
   document.querySelectorAll('.header__link-key').forEach((el) => {
     createScope({

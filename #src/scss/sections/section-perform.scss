@@ -15,7 +15,7 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(36, 52, 68, 0.8);
+    background: rgba(36, 52, 68, 0.7);
   }
 
   // .section-perform__body
@@ -23,10 +23,6 @@
     height: 100%;
     position: relative;
     z-index: 3;
-
-    @include screen-490 {
-      padding-top: 32px;
-    }
   }
 
   // .section-perform__content

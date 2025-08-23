@@ -5,7 +5,7 @@ const cb = () => { };
 export function fontsStyle(done) {
 	let filePath = $.path.fontsStyle.src;
 
-	//? Проверка на существование файла
+	//* Проверка на существование файла
 	fs.readFile(filePath, 'utf8', (err) => {
 		if (err) {
 			console.error(`Ошибка при чтении файла: ${filePath}`, err);
@@ -13,7 +13,7 @@ export function fontsStyle(done) {
 		}
 		//? Очищаем содержимое файла и добавляем строку импорта 
 		fs.writeFile(filePath, '@use "variables.scss" as *;\r\n@use "mixins.scss" as *;\r\n', cb);
-		//? Чтение директории со шрифтами
+		//* Чтение директории со шрифтами
 		fs.readdir($.path.fontsStyle.dest, (err, items) => {
 			if (err) {
 				console.error('Ошибка при чтении директории с шрифтами:', err);

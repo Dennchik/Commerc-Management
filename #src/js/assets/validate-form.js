@@ -1,4 +1,4 @@
-export function falidateForm() {
+export function validateForm() {
   document.addEventListener('DOMContentLoaded', () => {
     document.querySelectorAll('.form-order').forEach((form, index) => {
       const name = form.querySelector('.input.name');

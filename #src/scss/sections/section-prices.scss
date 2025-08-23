@@ -61,11 +61,16 @@
   // .section-prices__item
   &__item {
     padding: 1rem 0;
+    li {
+      font-weight: 300;
+    }
   }
 
   // .section-prices__list
   &__list {
     line-height: 130%;
+    color: #fff;
+    opacity: 0.8;
   }
 
   // .section-prices__item-title
@@ -84,8 +89,8 @@
     }
   }
 
-  // .section-prices__lable
-  &__lable {
+  // .section-prices__label
+  &__label {
     font-family: $font-family-title;
     padding-top: 1rem;
     font-size: 2.4rem;

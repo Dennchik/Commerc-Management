@@ -1,17 +1,17 @@
 // noinspection JSValidateTypes
-//* Importing modules
-import fonter from 'gulp-fonter';
+//* Import necessary modules
+import fonter from 'gulp-fonter-fix';
 import ttf2woff2 from 'gulp-ttf2woff2';
-//* Fonts - task
+
+//* Task for converting fonts
 export function fonts() {
-	return $.gulp.src(($.path.fonts.src), { encoding: false })
+	return $.gulp.src($.path.fonts.src, { encoding: false })
 		.pipe($.plumber({
 			errorHandler: $.notify.onError(error => ({
 				title: 'Fonts',
 				message: error.message,
 			})),
 		}))
-		// .pipe($.newer($.path.fonts.dest))
 		.pipe(fonter($.app.fonter))
 		.pipe($.debug({ title: 'convert-ttf to woff,eot,ttf' }))
 		.pipe($.gulp.dest($.path.fonts.dest))

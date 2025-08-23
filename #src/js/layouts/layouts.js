@@ -298,3 +298,27 @@ export function cookiesAccept(el, trigger) {
     cookiesAccept.style.transition = 'transform 0.5s ease';
   }, 3000);
 }
+
+//* - [ Запуск анимации lineMarquee (бегущей строки) ] -
+
+export function lineMarquee(element) {
+  const marquee = document.querySelector(element);
+  if (!marquee) return;
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          marquee.style.animationPlayState = 'running';
+        } else {
+          marquee.style.animationPlayState = 'paused';
+        }
+      });
+    },
+    {
+      threshold: 0.1, // 10% блока видно → запуск
+    }
+  );
+
+  observer.observe(marquee);
+}

@@ -17,6 +17,12 @@ mixin btn-link(type, text, mod)
 	a(class=mod + '' type=type)=text
 	block
 
+//-! mixin iconFont	
+mixin picture(src, alt)
+	picture
+		- var webpSrc = src.replace(/\.[^\.]+$/, '.webp')
+		source(srcset=webpSrc type='image/webp')
+		img(src=src alt=alt)
 //-! mixin iconFont		
 mixin iconfont(mod, classes)
 	i(class='icon-' + mod + ' ' + classes)
@@ -54,4 +60,4 @@ mixin layout
 			//- Do nothing
 	+set('main')
 	+set('side')
- 
+

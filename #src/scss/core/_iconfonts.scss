@@ -25,24 +25,9 @@
   font-variant-ligatures: discretionary-ligatures;
 }
 
-.icon-minus {
+.icon-sign-out {
   &:before {
-    content: $icon-minus;
-  }
-}
-.icon-plus {
-  &:before {
-    content: $icon-plus;
-  }
-}
-.icon-published-changes {
-  &:before {
-    content: $icon-published-changes;
-  }
-}
-.icon-check {
-  &:before {
-    content: $icon-check;
+    content: $icon-sign-out;
   }
 }
 .icon-hand-shake {
@@ -108,6 +93,26 @@
 .icon-angle-down {
   &:before {
     content: $icon-angle-down;
+  }
+}
+.icon-minus {
+  &:before {
+    content: $icon-minus;
+  }
+}
+.icon-plus {
+  &:before {
+    content: $icon-plus;
+  }
+}
+.icon-published-changes {
+  &:before {
+    content: $icon-published-changes;
+  }
+}
+.icon-check {
+  &:before {
+    content: $icon-check;
   }
 }
 .icon-youtube-lg {

@@ -167,6 +167,7 @@
 //* ------------------------- [Class _ibg] -------------------------------------
 
 .t-h1 {
+  filter: contrast(120%);
   font-size: 64px;
   @include minmax-490-1920 {
     font-size: calc(
@@ -178,6 +179,7 @@
   }
 }
 .t-h2 {
+  filter: contrast(120%);
   font-size: 42px;
   line-height: 100%;
   letter-spacing: 1.4px;
@@ -192,6 +194,7 @@
   }
 }
 .t-h3 {
+  filter: contrast(120%);
   font-size: 32px;
   line-height: 100%;
   letter-spacing: 1.4px;
@@ -206,11 +209,13 @@
   }
 }
 .t-text {
-  font-size: 26px;
+  font-size: 24px;
   line-height: 130%;
   letter-spacing: 0px;
+  color: $color;
+  filter: contrast(150%);
   @include minmax-490-1920 {
-    font-size: calc(14px + (26 - 14) * ((100vw - 490px) / (1920 - 490)));
+    font-size: calc(14px + (24 - 14) * ((100vw - 490px) / (1920 - 490)));
   }
   @include screen-490 {
     font-size: 14px;

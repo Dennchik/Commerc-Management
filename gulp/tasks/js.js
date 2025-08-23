@@ -10,9 +10,7 @@ export function js() {
 				message: error.message
 			}))
 		}))
-		.pipe($.gulpIf($.app.isDev, $.sourcemaps.init({
-			loadMaps: true
-		})))
+		.pipe($.gulpIf($.app.isDev, $.sourcemaps.init({ loadMaps: true })))
 		.pipe($.babel())
 		.pipe(webPackStream($.app.webpack))
 		.pipe($.fileInclude())

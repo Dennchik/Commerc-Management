@@ -19,33 +19,6 @@
   }
 }
 
-// .frame-container {
-//   position: absolute;
-//   margin: 0 auto;
-//   z-index: 0;
-//   top: 0;
-//   left: 0;
-//   width: 100%;
-//   height: 100%;
-//   border: 40px solid transparent;
-//   // border-image: url('../img/frame/border.png') 85 110;
-//   border-image-repeat: repeat;
-//   @include screen-320 {
-//     border: 20px solid transparent;
-//     // border-image: url('../img/frame/border.png') 85 110;
-//     border-image-repeat: repeat;
-//   }
-// }
-
-// .frame-container-inner {
-//   border: 30px solid transparent;
-//   border-image-repeat: stretch;
-//   border-image-slice: 45;
-//   border-image-outset: 25px;
-//   // border-image-source: url('../img/frame/note.png');
-//   opacity: 0.2;
-// }
-
 .box-shadow {
   box-shadow: 0 1px 5px #000000;
   backdrop-filter: blur(10px);
@@ -67,7 +40,8 @@
 }
 
 .gradient-loader {
-  background-image: radial-gradient(
+  background-image:
+    radial-gradient(
       ellipse at bottom center,
       rgba(36, 52, 68, 0.37) 30%,
       transparent
@@ -290,7 +264,8 @@
   transition: background-size 400ms;
 
   /* Размер фона для каждого слоя */
-  background-image: linear-gradient(to left, transparent, transparent),
+  background-image:
+    linear-gradient(to left, transparent, transparent),
     linear-gradient(
       to left,
       var(--background-selected),
