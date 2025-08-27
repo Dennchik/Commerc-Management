@@ -313,7 +313,7 @@
     align-items: center;
     justify-content: end;
 
-    &._btn-prew,
+    &._btn-prev,
     &._btn-next {
       width: 18rem;
       min-width: 16rem;
@@ -327,7 +327,7 @@
       text-align: center;
     }
 
-    &._btn-prew {
+    &._btn-prev {
       .button {
         color: $color;
         background: #fff;

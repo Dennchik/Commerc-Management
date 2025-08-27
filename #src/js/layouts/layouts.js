@@ -135,11 +135,11 @@ export function toggleSidebarMenu(sidebarMenu) {
   }
 }
 
-//* - [Компенсируес отступы при отурытии Modal]
+//* - [Компенсируем отступы при открытии Modal]
 const pageHeader = document.querySelector('.page__header');
 export function handleScrollbarOffset(el) {
   let scrollY = 0;
-  //* запомнаем текущее положение прокрутки
+  //* запоминаем текущее положение прокрутки
   scrollY = window.scrollY || document.documentElement.scrollTop;
   document.documentElement.style.setProperty(
     '--scroll-position',
@@ -214,7 +214,7 @@ export function toggleModal() {
   });
 }
 
-//* - [Переклюение полей формы]
+//* - [Переключение полей формы]
 export function fieldsetsToggle() {
   const container = document.querySelector('.form-question__content');
   const fieldsets = document.querySelectorAll(
@@ -247,7 +247,7 @@ export function fieldsetsToggle() {
     });
   });
 
-  document.querySelectorAll('._btn-prew').forEach((btn) => {
+  document.querySelectorAll('._btn-prev').forEach((btn) => {
     btn.addEventListener('click', () => {
       if (current > 0) {
         current--;

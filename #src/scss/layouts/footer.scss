@@ -79,7 +79,10 @@
   }
 
   &__contacts {
-    display: flex;
+    width: 100%;
+    display: grid;
+    justify-content: space-between;
+    grid-template-columns: repeat(3, min-content);
     gap: 6rem;
 
     @include screen-1440 {
@@ -120,6 +123,13 @@
     display: flex;
     gap: 6rem;
 
+    &:nth-child(2),
+    &:nth-child(3) {
+      .contacts__title {
+        white-space: nowrap;
+      }
+    }
+
     @include screen-1440 {
       gap: 3rem;
     }
@@ -155,7 +165,7 @@
     }
   }
 
-  // .contacts__title
+  // .contacts__title  white-space: nowrap;
   &__title {
     font-family: $font-family-title;
     opacity: 0.7;

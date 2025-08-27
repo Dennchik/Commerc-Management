@@ -50,6 +50,7 @@ $marquee-speed-seconds: 9s; // чем меньше — тем быстрее
     line-height: 1;
     white-space: nowrap;
     pointer-events: none;
+    font-family: $font-family-title;
   }
 
   /* Пауза при наведении (и при фокусе, для доступа с клавиатуры) */

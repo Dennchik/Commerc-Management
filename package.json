@@ -1,7 +1,7 @@
 {
   "name": "commercmanagement",
   "version": "1.0.0",
-  "description": "Commerc-Management",
+  "description": "Commerce-Management",
   "type": "module",
   "scripts": {
     "START": "gulp",
@@ -19,6 +19,7 @@
     "RESET": "gulp clear",
     "RESET-Fonts": "gulp clearFonts",
     "WATCHER": "gulp server",
+    "REDIRECT": "gulp redirect",
     "TASKS": "gulp --tasks"
   },
   "author": "Dennchik",

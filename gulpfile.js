@@ -2,18 +2,18 @@
 // noinspection JSUnusedGlobalSymbols
 
 import browserSync from 'browser-sync';
+import fs from 'fs';
 import gulp from 'gulp';
 
 import babel from 'gulp-babel';
 import debug from 'gulp-debug';
 import fileInclude from 'gulp-file-include';
 import gulpIf from 'gulp-if';
-import rename from 'gulp-rename';
 import notify from 'gulp-notify';
 import plumber from 'gulp-plumber';
+import rename from 'gulp-rename';
 import size from 'gulp-size';
 import sourcemaps from 'gulp-sourcemaps';
-import fs from 'fs';
 
 //* Configuration options
 import { app } from './gulp/config/app.js';
@@ -24,9 +24,9 @@ import { fonts } from './gulp/tasks/fonts.js';
 import { fontsStyle } from './gulp/tasks/fontStyle.js';
 import { image } from './gulp/tasks/image.js';
 import { js } from './gulp/tasks/js.js';
-import { redirect } from './gulp/tasks/redirect.js';
-import { pugJade } from './gulp/tasks/pug.js';
 import { json } from './gulp/tasks/json.js';
+import { pugJade } from './gulp/tasks/pug.js';
+import { redirect } from './gulp/tasks/redirect.js';
 import { scss } from './gulp/tasks/scss.js';
 import { server } from './gulp/tasks/server.js';
 import { sprite } from './gulp/tasks/sprite.js';
@@ -74,6 +74,7 @@ const end = gulp.series(
   clear,
   clearFonts,
   json,
+  redirect,
   gulp.parallel(pugJade, scss, js, fonts, image, sprite),
   fontsStyle
 );

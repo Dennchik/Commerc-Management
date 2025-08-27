@@ -1,10 +1,10 @@
-import globals from 'globals';
-import reactHooks from 'eslint-plugin-react-hooks';
-import reactRefresh from 'eslint-plugin-react-refresh';
-import react from 'eslint-plugin-react';
 import js from '@eslint/js';
 import ts from '@typescript-eslint/eslint-plugin';
 import tsParser from '@typescript-eslint/parser';
+import react from 'eslint-plugin-react';
+import reactHooks from 'eslint-plugin-react-hooks';
+import reactRefresh from 'eslint-plugin-react-refresh';
+import globals from 'globals';
 
 export default [
   {
@@ -15,19 +15,19 @@ export default [
       ecmaVersion: 'latest',
       globals: {
         ...globals.browser,
-        ...globals.node
+        ...globals.node,
       },
       parserOptions: {
         ecmaVersion: 'latest',
         sourceType: 'module',
-        ecmaFeatures: { jsx: true }
-      }
+        ecmaFeatures: { jsx: true },
+      },
     },
     plugins: {
       '@typescript-eslint': ts,
       'react-hooks': reactHooks,
       'react-refresh': reactRefresh,
-      react
+      react,
     },
     rules: {
       ...js.configs.recommended.rules,
@@ -41,7 +41,7 @@ export default [
       quotes: [
         'warn',
         'single',
-        { avoidEscape: true, allowTemplateLiterals: true }
+        { avoidEscape: true, allowTemplateLiterals: true },
       ],
       'comma-dangle': ['error', 'never'],
       'no-unused-vars': ['error', { varsIgnorePattern: '^[A-Z_]' }],
@@ -52,10 +52,10 @@ export default [
       'react/react-in-jsx-scope': 'off', // React 17+ не требует import React
       'react-hooks/rules-of-hooks': 'error',
       'react-hooks/exhaustive-deps': 'warn',
-      'react/jsx-no-target-blank': ['error', { enforceDynamicLinks: 'always' }]
+      'react/jsx-no-target-blank': ['error', { enforceDynamicLinks: 'always' }],
     },
     settings: {
       react: { version: 'detect' },
-    }
-  }
+    },
+  },
 ];
