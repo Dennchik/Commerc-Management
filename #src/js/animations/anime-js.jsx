@@ -110,17 +110,33 @@ export function fadeInBlock(elements) {
   });
 }
 
+// export function smoothScrollTitle(elements) {
+//   document.querySelectorAll(elements).forEach((el) => {
+//     if (!isMobile) {
+//       animate(el, {
+//         x: ['20%', '0%'],
+//         ease: 'linear',
+//         duration: 2000,
+//         alternate: false,
+
+//         autoplay: onScroll({
+//           enter: 'bottom-=100 top',
+//           leave: 'bottom-=250 bottom',
+//           sync: 0.1,
+//           debug: true,
+//         }),
+//       });
+//     }
+//   });
+// }
 export function smoothScrollTitle(elements) {
   document.querySelectorAll(elements).forEach((el) => {
     if (!isMobile) {
       animate(el, {
         x: ['20%', '0%'],
-        ease: 'linear',
-
+        ease: 'inOut(1.675)',
         autoplay: onScroll({
-          enter: 'bottom-=100 top',
-          leave: 'bottom-=250 bottom',
-          sync: 0.1,
+          target: el,
           // debug: true,
         }),
       });

@@ -26,7 +26,11 @@
     @content;
   }
 }
-
+@mixin screen-1800 {
+  @media screen and (max-width: 1800px) {
+    @content;
+  }
+}
 @mixin screen-1440 {
   @media screen and (max-width: 1440px) {
     @content;
@@ -175,6 +179,11 @@
 //* ----------------------------------------------------------------------------
 @mixin minmax-1440-1920 {
   @media (min-width: 1440.98px) and (max-width: 1920px) {
+    @content;
+  }
+}
+@mixin minmax-1140-1920 {
+  @media (min-width: 1140.98px) and (max-width: 1920px) {
     @content;
   }
 }

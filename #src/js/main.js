@@ -3,6 +3,7 @@ import { smoother } from './animations/animations.jsx';
 import { validateForm } from './assets/validate-form.js';
 import { dynamicAdaptive } from './assets/dynamic-adaptive.js';
 import { anchorsSmoothScrolling } from './assets/anchors-smooth-scrolling.js';
+import { validateChecked } from './assets/validate-checked.js';
 import {
   animateHeader,
   smoothScrollTitle,
@@ -23,7 +24,6 @@ import {
 
 const isMobile = /Mobi|Android/i.test(navigator.userAgent);
 loaded('.preloader');
-
 fadeInColumn('.its-col');
 fadeInBlock('.its-block');
 fadeInItem('.its-el');
@@ -42,6 +42,7 @@ if (!isMobile) {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
+  validateChecked();
   cookiesAccept('.cookies-accept', '.cookies-accept__button');
   lineMarquee('.running-line__marquee');
   maskPhone('.phone');

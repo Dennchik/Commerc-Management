@@ -274,7 +274,8 @@
 }
 
 //* ----------------------------------------------------------------------------
-.button-container {
+.button-container,
+.form-question__button {
   button {
     background: transparent;
     transition: background 0.4s ease-in-out;
@@ -282,7 +283,7 @@
       cursor: not-allowed;
       pointer-events: none;
       box-shadow: none;
-      background: silver;
+      background: silver !important;
     }
   }
 }

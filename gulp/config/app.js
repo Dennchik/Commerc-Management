@@ -174,13 +174,7 @@ export const app = {
   autoprefixer: {
     cascade: false,
     grid: 'auto-place',
-    overrideBrowserslist: [
-      'Android >= 4',
-      'last 3 versions',
-      'Firefox >= 24',
-      'Safari >= 6',
-      'Opera >= 12',
-    ],
+    overrideBrowserslist: ['last 2 versions', 'ie >= 10', '> 5%'],
   },
   fonter: {
     formats: ['ttf', 'woff', 'svg'],

@@ -238,7 +238,7 @@ export function fieldsetsToggle() {
     updateContainerHeight();
   };
 
-  document.querySelectorAll('._btn-next').forEach((btn) => {
+  document.querySelectorAll('._btn-next button').forEach((btn) => {
     btn.addEventListener('click', () => {
       if (current < fieldsets.length - 1) {
         current++;
@@ -247,7 +247,7 @@ export function fieldsetsToggle() {
     });
   });
 
-  document.querySelectorAll('._btn-prev').forEach((btn) => {
+  document.querySelectorAll('._btn-prev button').forEach((btn) => {
     btn.addEventListener('click', () => {
       if (current > 0) {
         current--;
@@ -300,7 +300,6 @@ export function cookiesAccept(el, trigger) {
 }
 
 //* - [ Запуск анимации lineMarquee (бегущей строки) ] -
-
 export function lineMarquee(element) {
   const marquee = document.querySelector(element);
   if (!marquee) return;
