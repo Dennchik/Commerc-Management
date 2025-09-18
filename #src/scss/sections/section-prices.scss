@@ -64,10 +64,6 @@
   &__item {
     flex: 1 1 auto;
     padding: 1rem 0;
-    li {
-      font-weight: 300;
-      color: $color-secondary;
-    }
   }
 
   // .section-prices__list
@@ -75,6 +71,13 @@
     line-height: 130%;
     color: #fff;
     opacity: 0.8;
+    .icon {
+      margin-right: 10px;
+    }
+    li {
+      font-weight: 300;
+      color: $color-secondary;
+    }
   }
 
   // .section-prices__item-title
