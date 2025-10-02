@@ -48,6 +48,26 @@ document.addEventListener('DOMContentLoaded', () => {
   maskPhone('.phone');
 });
 
+if (isMobile) {
+  const subItems = document.querySelectorAll('.header__sub-item');
+
+  subItems.forEach((subItem) => {
+    const trigger = subItem.closest('.header__link-key');
+    if (!trigger) return;
+
+    trigger.addEventListener('click', () => {
+      const hoverItem = subItem.closest('.header__menu-items');
+
+      if (hoverItem) {
+        const opened = hoverItem.querySelector('.hover');
+        if (opened && opened !== subItem) {
+          opened.classList.remove('hover');
+        }
+      }
+      trigger.classList.toggle('hover');
+    });
+  });
+}
 //* ----------------------------------------------------------------------------
 console.log(
   '%c РОССИЯ ',

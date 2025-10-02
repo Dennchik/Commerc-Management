@@ -287,11 +287,21 @@
       }
     }
 
-    &:hover {
+    &.hover {
       .header__sub-item {
         opacity: 1;
         pointer-events: auto;
         transform: translateY(0);
+      }
+    }
+
+    @include min-1024 {
+      &:hover {
+        .header__sub-item {
+          opacity: 1;
+          pointer-events: auto;
+          transform: translateY(0);
+        }
       }
     }
 
