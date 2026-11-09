@@ -1,5 +1,5 @@
 import loaded from './assets/preloader.js';
-import { smoother } from './animations/animations.jsx';
+import { smoother, applyParallax } from './animations/animations.jsx';
 import { validateForm } from './assets/validate-form.js';
 import { dynamicAdaptive } from './assets/dynamic-adaptive.js';
 import { anchorsSmoothScrolling } from './assets/anchors-smooth-scrolling.js';
@@ -39,6 +39,7 @@ shadowScrollHeader();
 toggleModal();
 if (!isMobile) {
   smoother();
+  applyParallax('.section-perform__image');
 }
 
 document.addEventListener('DOMContentLoaded', () => {
